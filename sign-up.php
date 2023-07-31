@@ -12,10 +12,11 @@ include("connect.php");
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 <style>
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 a{
   text-decoration: none;
@@ -165,10 +166,10 @@ body {
 </head>
 <body>
   <div class="topnav" id="myTopnav">
-    <a href="http://127.0.0.1:5500/index.html" class="active">GENESIS IT SOLUTIONS</a>
-    <a href="http://127.0.0.1:5500/jobs.html">FIND JOBS</a>
-    <a href="http://127.0.0.1:5500/location.html">LOCATION</a>
-    <a href="http://127.0.0.1:5500/login.html">LOG-IN</a>
+    <a href="/index.php" class="active">GENESIS IT SOLUTIONS</a>
+    <a href="/jobs.php">FIND JOBS</a>
+    <a href="/location.php">LOCATION</a>
+    <a href="/login.php">LOG-IN</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -213,9 +214,9 @@ body {
                 <input type="submit" name="register" class="btn" value="Register">
             </div>
 </form>
-      <a href="http://127.0.0.1:5500/login.php">Already have an account</a>
+      <a href="/login.php">Already have an account</a>
       <br>
-      <a href="http://127.0.0.1:5500/index.html">back</a>
+      <a href="/index.php">back</a>
     </form>
     <p id="message"></p>
   </div>
@@ -236,15 +237,15 @@ function myFunction() {
 
 
 <footer class="footer">
-  <div class="container-1">
+  <div class="container">
     <div class="footer-content">
       <nav class="footer-nav">
         <div class="logo">
         </div>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="/index.php">Home</a>
+        <a href="/about.html">About</a>
         <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="/location.php">Contact</a>
       </nav>
       <p>&copy; 2023 <a href="http://pravishree.com">pravishree design co.</a></p>
     </div>

@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
 /* Reset default margin and padding for all elements */
 * {
   margin: 0;
@@ -10,7 +15,6 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -126,7 +130,8 @@ footer {
 
             <!-- Add more input fields as needed, such as salary, requirements, etc. -->
 
-            <button type="submit">Submit Job</button>
+            <button type="submit">Add Job</button>
+            <a href="./dashboard.php" style="text-decoration: none; text-align: center;">Back to admin panel</a>
         </form>
     </div>
 

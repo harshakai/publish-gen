@@ -13,7 +13,7 @@
     <body>
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.php">Registration and Login System</a>
+            <a class="navbar-brand ps-3" href="/index.php">Registration and Login System</a>
             <!-- Sidebar Toggle-->
 
             <!-- Navbar Search-->
@@ -26,7 +26,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt" Style="justify-content:center;width:100%">  GENESIS User Registration & Login</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
               
                         </ol>
         <div class="row" >
@@ -34,7 +34,7 @@
                                 <div class="card text-white mb-4"style="text-align:center;background-color:#d4a7a7">
                                     <div class="card-body"><P style="color:black">Not Registers Yet</P></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-dark stretched-link"style="text-align:center" href="signup.php">Signup Here</a>
+                                        <a class="small text-dark stretched-link"style="text-align:center" href="/signup.php">Signup Here</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
                                 <div class="card text-white mb-4"style="text-align:center;background-color:#9da0c2">
                                     <div class="card-body"><P style="color:black">Already Registered</p></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-dark stretched-link"style="text-align:center" href="login.php">Login Here</a>
+                                        <a class="small text-dark stretched-link"style="text-align:center" href="/login.php">Login Here</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

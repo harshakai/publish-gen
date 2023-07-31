@@ -1,8 +1,8 @@
 <?php session_start();
 include_once('../includes/config.php');
-if (strlen($_SESSION['adminid']==0)) {
-  header('location:logout.php');
-  } else{ ?>
+if (($_SESSION['user_role']=='admin')) { 
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,7 +20,7 @@ if (strlen($_SESSION['adminid']==0)) {
     <body class="sb-nav-fixed">
       <?php include_once('includes/navbar.php');?>
         <div id="layoutSidenav">
-         <?php include_once('includes/sidebar.php');?>
+         <?php include_once('includes/sidebar.html');?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -97,4 +97,9 @@ $ret=mysqli_query($con,"select * from users where (fname like '%$searchkey%' || 
         <script src="../js/datatables-simple-demo.js"></script>
     </body>
 </html>
-<?php } ?>
+<?php 
+    }
+    else{
+        header('location:logout.php');
+    }    
+?>

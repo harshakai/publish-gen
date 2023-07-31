@@ -2151,6 +2151,12 @@ progress {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/******** FORM *************/
+.form{
+  margin-bottom: 35px;
+}
+
 .form-label {
   margin-bottom: 0.5rem;
 }

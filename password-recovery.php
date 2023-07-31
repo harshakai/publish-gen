@@ -75,7 +75,7 @@ echo "<script>alert('Email not register with us');</script>";
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header">
-<h2 align="center">Registration and Login System</h2>
+<h2 style="text-align:center">Registration and Login System</h2>
 <hr />
 <h3 class="text-center font-weight-light my-4">Password Recovery</h3></div>
 <div class="card-body">
@@ -97,8 +97,8 @@ echo "<script>alert('Email not register with us');</script>";
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="signup.php">Need an account? Sign up!</a></div>
-                        <div class="small"><a href="index.php">Back to Home</a></div>
+                                        <div class="small"><a href="/signup.php">Need an account? Sign up!</a></div>
+                        <div class="small"><a href="/index.php">Back to Home</a></div>
                                     </div>
                                 </div>
                             </div>

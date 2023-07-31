@@ -38,7 +38,7 @@ if($msg)
     <body class="sb-nav-fixed">
       <?php include_once('includes/navbar.php');?>
         <div id="layoutSidenav">
-          <?php include_once('includes/sidebar.php');?>
+          <?php include_once('includes/sidebar.html');?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">

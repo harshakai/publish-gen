@@ -1,13 +1,13 @@
 <?php session_start();
 include_once('../includes/config.php');
-if (strlen($_SESSION['adminid']==0)) {
+if (($_SESSION['user_role']!='admin')) {
   header('location:logout.php');
   } else{
 // for deleting user
 if(isset($_GET['id']))
 {
 $adminid=$_GET['id'];
-$msg=mysqli_query($con,"delete from users where id='$adminid'");
+$msg=mysqli_query($con,"DELETE from users WHERE id='$adminid'");
 if($msg)
 {
 echo "<script>alert('Data deleted');</script>";
@@ -29,9 +29,9 @@ echo "<script>alert('Data deleted');</script>";
 
     </head>
     <body class="sb-nav-fixed">
-      <?php include_once('includes/navbar.php');?>
+      <?php  include_once('includes/navbar.php');?>
         <div id="layoutSidenav">
-         <?php include_once('includes/sidebar.php');?>
+         <?php include_once('includes/sidebar.html');?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">

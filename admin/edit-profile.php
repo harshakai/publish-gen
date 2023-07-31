@@ -1,8 +1,7 @@
 <?php session_start();
 include_once('../includes/config.php');
-if (strlen($_SESSION['adminid']==0)) {
-  header('location:logout.php');
-  } else{
+if (($_SESSION['user_role']=='admin')) { 
+
 //Code for Updation 
 if(isset($_POST['update']))
 {
@@ -38,7 +37,7 @@ if($msg)
     <body class="sb-nav-fixed">
       <?php include_once('includes/navbar.php');?>
         <div id="layoutSidenav">
-          <?php include_once('includes/sidebar.php');?>
+          <?php include_once('includes/sidebar.html');?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -98,4 +97,9 @@ while($result=mysqli_fetch_array($query))
         <script src="../js/datatables-simple-demo.js"></script>
     </body>
 </html>
-<?php } ?>
+<?php 
+    }
+    else{
+        header('location:logout.php');
+    }    
+?>

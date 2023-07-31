@@ -185,10 +185,10 @@ p{
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="http://127.0.0.1:5500/index.html" class="active"><img src="Untitled_design-removebg.png" height="35px" width="inherit" style="margin-right: 5px;"><b style="color:  rgb(211, 136, 136);font-size: 20px;">GENESIS IT SOLUTIONS</a>
-  <a href="http://127.0.0.1:5500/jobs.php">FIND JOBS</a>
-  <a href="http://127.0.0.1:5500/location.html">LOCATION</a>
-  <a href="http://127.0.0.1:5500/login.php">LOG-IN</a>
+  <a href="/index.html" class="active"><img src="Untitled_design-removebg.png" height="35px" width="inherit" style="margin-right: 5px;"><b style="color:  rgb(211, 136, 136);font-size: 20px;">GENESIS IT SOLUTIONS</a>
+  <a href="/jobs.php">FIND JOBS</a>
+  <a href="/location.php">LOCATION</a>
+  <a href="/login.php">LOG-IN</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>

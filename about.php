@@ -5,7 +5,7 @@
     // echo $_SESSION['id'];
     // echo $_SESSION['name'];
     // Database Connection
-    require('./includes/config.php');
+    require('includes/config.php');
 
     if($con){
       // echo "Success";

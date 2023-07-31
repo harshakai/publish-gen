@@ -1,6 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
+$servername = "15.206.157.202:3306";
+$username = "gene_genesisit";
 $password = "";
 $dbname = "sign-up";
 

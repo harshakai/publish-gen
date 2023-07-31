@@ -349,7 +349,7 @@ margin-top: 60px;
 <h2 style="text-align: center;">ABOUT GENESIS?</h2>
 
 <p style="font-style: 15px;margin: auto;width: 80%; text-align:left;">We provide outsourcing, staffing, consulting and workforce solutions within the areas of engineering, accounting and finance, health-care, human resources, IT, legal, life sciences,</span> manufacturing and logistics, office and administration and sales and marketing. We can’t wait to tell you all about it.</p>
-<button><a href="about.php">Read More</a></button>
+<button><a href="./about.php">Read More</a></button>
 </div>
 </div>
 

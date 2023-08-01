@@ -1,54 +1,54 @@
 <?php
         session_start();
 
-include_once('../includes/config.php');
+// include_once('../includes/config.php');
 // Code for login 
-if(isset($_POST['login']))
-{
-    $adminusername = $_POST['username'];
-    $pass = ($_POST['password']);
-    // echo $adminusername;
-    // echo "<br>";
-    // echo $pass;
-    // $ret = mysqli_query($con,"SELECT * FROM `admin`");
-    // while ($row = mysqli_fetch_assoc($ret)) {
-    //     print_r($row);
-    // }
-    // $row = mysqli_fetch_assoc($ret)
-    // print_r($row);
-    $ret = mysqli_query($con,"SELECT * FROM `admin` WHERE username='$adminusername' and password='$pass'");
-    $num = mysqli_fetch_assoc($ret);
-    $count = mysqli_num_rows($ret);
-    echo $count;
-    if($count>0)
-    {
-        // $extra="./dashboard.php";
+// if(isset($_POST['login']))
+// {
+//     $adminusername = $_POST['username'];
+//     $pass = ($_POST['password']);
+//     // echo $adminusername;
+//     // echo "<br>";
+//     // echo $pass;
+//     // $ret = mysqli_query($con,"SELECT * FROM `admin`");
+//     // while ($row = mysqli_fetch_assoc($ret)) {
+//     //     print_r($row);
+//     // }
+//     // $row = mysqli_fetch_assoc($ret)
+//     // print_r($row);
+//     $ret = mysqli_query($con,"SELECT * FROM `admin` WHERE username='$adminusername' and password='$pass'");
+//     $num = mysqli_fetch_assoc($ret);
+//     $count = mysqli_num_rows($ret);
+//     echo $count;
+//     if($count>0)
+//     {
+//         // $extra="./dashboard.php";
         
 
-        $_SESSION['id'] = $num['id'];
-        $_SESSION['name'] = $num['username'];
-        $_SESSION['user_role'] = $num['user_role'];
+//         $_SESSION['id'] = $num['id'];
+//         $_SESSION['name'] = $num['username'];
+//         $_SESSION['user_role'] = $num['user_role'];
 
 
-        // echo $_SESSION['id'];
-        // echo $_SESSION['name'];
-        // echo $_SESSION['user_role'];
+//         // echo $_SESSION['id'];
+//         // echo $_SESSION['name'];
+//         // echo $_SESSION['user_role'];
 
-        header("Location: ./dashboard.php");
+//         header("Location: ./dashboard.php");
 
-        // echo "<script>window.location.href = '".$extra."'</script>";
-        exit();
-    }
-    else
-    {
-        echo "<script>alert('Invalid username or password');</script>";
-        // $extra="index.php";
-        // echo "<script>window.location.href = '".$extra."'</script>";
+//         // echo "<script>window.location.href = '".$extra."'</script>";
+//         exit();
+//     }
+//     else
+//     {
+//         echo "<script>alert('Invalid username or password');</script>";
+//         // $extra="index.php";
+//         // echo "<script>window.location.href = '".$extra."'</script>";
         
-        header("Location: ./index.php");
-        exit();
-    }
-}
+//         header("Location: ./index.php");
+//         exit();
+//     }
+// }
 ?>
 
 <!DOCTYPE html>

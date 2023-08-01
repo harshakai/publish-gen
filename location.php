@@ -156,7 +156,7 @@ h2{
     </ul>
   </div>
 
-<h2>Directory of Genisis IT Solutions location</h2>
+<h2 style="margin: 2%;font-weight:500;font-size:40px">Directory of Genisis IT Solutions location</h2>
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3418.4236831659914!2d-96.751469!3d33.157973!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c3df8fa9587cb%3A0xbaf25e7c9abf4299!2s9753%20Brackenfield%20Ln%2C%20Frisco%2C%20TX%2075035%2C%20USA!5e1!3m2!1sen!2sin!4v1690270325102!5m2!1sen!2sin" width="90%" height="450" style="border:0;margin-left: 5%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   

@@ -290,11 +290,11 @@ margin-top: 60px;
 <body>
 
 <div class="topnav" id="myTopnav">
-    <a href="./index.php" class="active"><img src="aswika desing logo by genius.png" height="35px" width="inherit" style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"></a>
-    <a href="./jobs.php" style="font-size: 14px;margin-top: 5px;font-weight:200;">Find Jobs</a>
-    <a href="./location.php" style="font-size: 14px;margin-top: 5px;font-weight:200;">Location</a>
-    <a href="./admin/index.php" style="font-size: 14px;margin-top: 5px;font-weight:200;">Admin Login</a>
-    <a href="./login.php" style="font-size: 14px;margin-top: 5px;font-weight:200;">User Login</a>
+    <a href="./index.php" class="active"><img src="aswika desing logo by genius.png" height="35px" width="inherit" style="margin-right: 5px;"></a>
+    <a href="./jobs.php" style="font-size: 14px;margin-top: 5px;">Find Jobs</a>
+    <a href="./location.php" style="font-size: 14px;margin-top: 5px;">Location</a>
+    <a href="./admin/index.php" style="font-size: 14px;margin-top: 5px;">Admin Login</a>
+    <a href="./login.php" style="font-size: 14px;margin-top: 5px;">User Login</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
@@ -360,11 +360,11 @@ margin-top: 60px;
   
 <img src="pexels-ivan-samkov-4458554.jpg" alt="office" class="responsive-2"  width="600" height="400">
 
-  <h2 style="margin-top: 20%;width:80%;margin-left: 20%;position: absolute;color:black;font-weight:200">
+  <h2 style="margin-top: 20%;width:80%;margin-left: 20%;position: absolute;color:black;">
     career search underway?
   </h2>
   <br>
-  <h2 style="margin-top: 26%;width:80%;margin-left: 20%;position: absolute;color:black;font-weight:200">
+  <h2 style="margin-top: 26%;width:80%;margin-left: 20%;position: absolute;color:black;">
     look no further!
   </h2>
   <br>
@@ -379,10 +379,10 @@ margin-top: 60px;
       <nav class="footer-nav">
         <div class="logo">
         </div>
-        <a href="#home" style="font-weight:200">Home</a>
-        <a href="#about" style="font-weight:200">About</a>
-        <a href="#services" style="font-weight:200">Services</a>
-        <a href="#contact" style="font-weight:200">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
       </nav>
       <p>&copy; 2023 <a href="http://pravishree.com" style="font-weight:200">pravishree design co.</a></p>
     </div>

@@ -124,6 +124,10 @@ font-size: 20px;
   color: #ff6600;
 }
 
+.p{
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align:justify;
+}
 
 
 

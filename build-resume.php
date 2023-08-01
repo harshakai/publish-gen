@@ -286,18 +286,22 @@
     </form>
   </div>
 
-  <footer class="footer">
+  <!--------------------- Footer Section ------------->
+  <footer class="footer"> 
     <div class="container">
       <div class="footer-content">
-        <nav class="footer-nav">
-          <div class="logo">
-          </div>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <p>&copy; 2023 <a href="http://pravishree.com">pravishree design co.</a></p>
+        <div class="image"><img src="./images/resilient_logo.png" alt=""></div>
+        <div>
+          <nav class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="company-name">
+          <p>&copy; 2023 <a href="http://pravishree.com">pravishree design co. All rights reserved</a></p>
+        </div>
       </div>
     </div>
   </footer>

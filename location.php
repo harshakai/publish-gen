@@ -131,9 +131,9 @@ h2{
 
   <div class="topnav" id="myTopnav">
     <ul>
-      <li><a href="./index.php" class="active"><img src="Untitled_design-removebg.png" height="35px" width="inherit"
-          style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"><b>GENESIS IT
-            SOLUTIONS</b></b></a>
+      <li><a href="./index.php" class="active"><img src="aswika desing logo by genius.png" height="35px" width="inherit"
+          style="margin-right: 5px;">
+          </a>
       </li>
       <li><a href="./index.php">Home</a></li>
       <li><a href="./jobs.php" >Find Jobs</a></li>

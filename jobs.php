@@ -691,7 +691,7 @@
   <div class="jobs">
     <?php
       // jobs.php (Display Saved Job Postings)
-      include('./admin/database.php'); // Include the database connection file
+      include('./database.php'); // Include the database connection file
       $sql = "SELECT * FROM jobs";
       $result = mysqli_query($con, $sql);
     ?>

@@ -1,6 +1,6 @@
-<?php session_start();
-include_once('../includes/config.php');
-if (($_SESSION['user_role']=='admin')) {
+<?php// session_start();
+//include_once('../includes/config.php');
+//if (($_SESSION['user_role']=='admin')) {
 
     
 ?>
@@ -66,9 +66,9 @@ if (($_SESSION['user_role']=='admin')) {
         <script src="../js/datatables-simple-demo.js"></script>
     </body>
 </html>
-<?php 
-    }
-    else{
-        header('location:logout.php');
-    }    
+<?php  
+    // }
+    // else{
+    //     header('location:logout.php');
+    // }    
 ?>

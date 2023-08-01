@@ -1,18 +1,20 @@
-<?php session_start();
-include_once('../includes/config.php');
-if (($_SESSION['user_role']!='admin')) {
-  header('location:logout.php');
-  } else{
-// for deleting user
-if(isset($_GET['id']))
-{
-$adminid=$_GET['id'];
-$msg=mysqli_query($con,"DELETE from users WHERE id='$adminid'");
-if($msg)
-{
-echo "<script>alert('Data deleted');</script>";
-}
-}
+<?php 
+    session_start();
+    // include_once('../includes/config.php');
+    // if (($_SESSION['user_role']!='admin')) {
+    //   header('location:logout.php');
+    // } 
+    // else{
+    //     // for deleting user
+    //     if(isset($_GET['id']))
+    //     {
+    //         $adminid=$_GET['id'];
+    //         $msg=mysqli_query($con,"DELETE from users WHERE id='$adminid'");
+    //         if($msg)
+    //         {
+    //         echo "<script>alert('Data deleted');</script>";
+    //         }
+    //     }
    ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,24 +73,26 @@ echo "<script>alert('Data deleted');</script>";
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                              <?php $ret=mysqli_query($con,"select * from users");
-                              $cnt=1;
-                              while($row=mysqli_fetch_array($ret))
-                              {?>
+                                              <?php 
+                            //                   $ret=mysqli_query($con,"select * from users");
+                            //   $cnt=1;
+                            //   while($row=mysqli_fetch_array($ret))
+                            //   {
+                                ?>
                               <tr>
-                              <td><?php echo $cnt;?></td>
-                                  <td><?php echo $row['fname'];?></td>
-                                  <td><?php echo $row['lname'];?></td>
-                                  <td><?php echo $row['email'];?></td>
-                                  <td><?php echo $row['contactno'];?></td>  <td><?php echo $row['posting_date'];?></td>
+                              <td><?php //echo $cnt;?></td>
+                                  <td><?php //echo $row['fname'];?></td>
+                                  <td><?php //echo $row['lname'];?></td>
+                                  <td><?php //echo $row['email'];?></td>
+                                  <td><?php //echo $row['contactno'];?></td>  <td><?php //echo $row['posting_date'];?></td>
                                   <td>
                                      
-                                     <a href="user-profile.php?uid=<?php echo $row['id'];?>"> 
+                                     <a href="user-profile.php?uid=<?php// echo $row['id'];?>"> 
                           <i class="fas fa-edit"></i></a>
-                                     <a href="manage-users.php?id=<?php echo $row['id'];?>" onClick="return confirm('Do you really want to delete');"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                     <a href="manage-users.php?id=<?php //echo $row['id'];?>" onClick="return confirm('Do you really want to delete');"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                   </td>
                               </tr>
-                              <?php $cnt=$cnt+1; }?>
+                              <?php //$cnt=$cnt+1; }?>
                                       
                                     </tbody>
                                 </table>
@@ -105,4 +109,4 @@ echo "<script>alert('Data deleted');</script>";
         <script src="../js/datatables-simple-demo.js"></script>
     </body>
 </html>
-<?php } ?>
+<?php //} ?>

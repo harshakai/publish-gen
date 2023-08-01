@@ -74,14 +74,14 @@ li {
 
 /* Image */
 .img {
-  width: 55%;
+  width: 45%;
   object-fit: contain;
 }
 
 .img img{
   width: 100%;
   /* height: 100%; */
-  height: 13vh;
+  height:  15vh;
   /* object-fit: cover; */
   /* background-position: center; */
 }

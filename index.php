@@ -292,7 +292,7 @@ margin-top: 60px;
     <a href="./index.php" class="active"><img src="Untitled_design-removebg.png" height="35px" width="inherit" style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"><b>GENESIS IT SOLUTIONS</b></b></a>
     <a href="./jobs.php" style="font-size: 14px;margin-top: 5px;">Find Jobs</a>
     <a href="./location.php" style="font-size: 14px;margin-top: 5px;">Location</a>
-    <a href="./admin_login.php" style="font-size: 14px;margin-top: 5px;">Admin Login</a>
+    <a href="./admin/index.php" style="font-size: 14px;margin-top: 5px;">Admin Login</a>
     <a href="./login.php" style="font-size: 14px;margin-top: 5px;">User Login</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -348,7 +348,7 @@ margin-top: 60px;
 <div class="para">
 <h2 style="text-align: center;">ABOUT GENESIS?</h2>
 
-<p style="font-style: 15px;margin: auto;width: 80%; text-align:left;">We provide outsourcing, staffing, consulting and workforce solutions within the areas of engineering, accounting and finance, health-care, human resources, IT, legal, life sciences,</span> manufacturing and logistics, office and administration and sales and marketing. We can’t wait to tell you all about it.</p>
+<p style="font-style: 15px;margin: auto;width: 80%; text-align:justify;">We provide outsourcing, staffing, consulting and workforce solutions within the areas of engineering, accounting and finance, health-care, human resources, IT, legal, life sciences,</span> manufacturing and logistics, office and administration and sales and marketing. We can’t wait to tell you all about it.</p>
 <button><a href="./about.php">Read More</a></button>
 </div>
 </div>

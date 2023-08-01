@@ -147,7 +147,7 @@
         and workforce solutions within the areas of engineering, accounting and finance, health-care, human resources,
         IT, legal, life sciences,</span> manufacturing and logistics, office and administration and sales and marketing.
         We can’t wait to tell you all about it.</p>
-      <button><a href="./about.php" style="color: white">Read More</a></button>
+      <button><a href="./jobs.php" style="color: white">Read More</a></button>
     </div>
   </div>
 

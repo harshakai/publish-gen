@@ -59,7 +59,7 @@
       <?php //else: ?>
       <li><a href="./admin/index.php">Admin Login</a></li>
       <li><a href="./login.php">User Login</a></li>
-      <?php //endif; ?>
+      <?php // endif; ?>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -79,7 +79,7 @@
         
         <p class="directors">
             <p class="director">Managing Director : SRIDHAR</p>   
-            <p class="director">Our CEO : VIJAY KUMAR</p>
+            <p class="director">Our CEO : VIJAY KUMAR sir</p>
         </p>
 
          <!-- <p style="font-weight: 700;font-size: 50px;"></p>

@@ -141,7 +141,7 @@
         height="400">
     </div>
     <div class="para">
-      <h2 style="text-align: center;">ABOUTsss GENESIS?</h2>
+      <h2 style="text-align: center;">ABOUT GENESIS?</h2>
 
       <p>We provide outsourcing, staffing, consulting
         and workforce solutions within the areas of engineering, accounting and finance, health-care, human resources,

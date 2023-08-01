@@ -1,7 +1,7 @@
 <?php
 
     // Check if the user is logged in
-    // session_start();
+    session_start();
     // echo $_SESSION['id'];
     // echo $_SESSION['name'];
     // Database Connection
@@ -36,7 +36,7 @@
 
 <body>
 
-  <div class="topnav" id="myTopnav">
+  <!-- <div class="topnav" id="myTopnav">
     <ul>
       <li><a href="./index.php" class="active"><img src="./images/logo.png" height="50px" width="inherit"
           style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"></b></b></a>
@@ -64,8 +64,34 @@
         <i class="fa fa-bars"></i>
       </a>
     </ul>
-  </div>
+  </div> -->
 
+  <div class="topnav" id="myTopnav">
+    <ul>
+      <li><a href="./index.php" class="active"><img src="./images/logo.png" height="50px" width="inherit"
+          style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"></b></b></a>
+      </li>
+      <li><a href="./index.php">Home</a></li>
+      <li><a href="./jobs.php" >Find Jobs</a></li>
+      <li><a href="./location.php" >Location</a></li>
+
+      <?php if(isset($_SESSION['user_role']) && ($_SESSION['user_role']=='user')): ?>
+        <li><a href="">Welcome <?php echo $_SESSION['name']; ?></a></li>
+        <li><a href="./logout.php" style="font-weight: 600; color: red;">Logout</a></li>
+      <?php elseif(isset($_SESSION['user_role']) && ($_SESSION['user_role']=='admin')): ?>
+        <li><a href="">Welcome <?php echo $_SESSION['name']; ?></a></li>
+        <li><a href="./admin/dashboard.php">Admin Panel</a></li>
+        <li><a href="./logout.php" style="font-weight: 600; color: red;">Logout</a></li>
+      <?php else: ?>
+        <li><a href="./admin/index.php" >Admin Login</a></li>
+        <li><a href="./login.php" >User Login</a></li>
+      <?php endif; ?> 
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </ul>
+  </div>
+  
   <div class="container">
     <div class="para">
       <p>Welcome to Genesis, your premier destination for finding your dream job! At Genesis, we understand that finding

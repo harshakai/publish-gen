@@ -68,13 +68,13 @@ li {
 }
 
 .para {
-  width: 50%;
+  width: 40%;
   font-size: 20px;
 }
 
 /* Image */
 .img {
-  width: 50%;
+  width: 60%;
   object-fit: contain;
 }
 

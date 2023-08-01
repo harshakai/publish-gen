@@ -2,31 +2,31 @@
 
   session_start();
   
-  $jobs = array(
-    array("title" => "Job Title 1", "description" => "Job Description 1", "location" => "Location 1"),
-    array("title" => "Job Title 2", "description" => "Job Description 2", "location" => "Location 2"),
-  )
+  // $jobs = array(
+  //   array("title" => "Job Title 1", "description" => "Job Description 1", "location" => "Location 1"),
+  //   array("title" => "Job Title 2", "description" => "Job Description 2", "location" => "Location 2"),
+  // )
 
-?> 
+?>
 
 
 <?php
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['apply_job']) && isset($_POST['job_id']) && isset($_FILES['resume'])) {
-      $jobID = $_POST['job_id'];
-      $name = $_POST['name'];
-      $email = $_POST['email'];
-      $resume = $_FILES['resume']['name']; // Note: This is just the filename; you'll need to handle file upload properly
+  // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  //   if (isset($_POST['apply_job']) && isset($_POST['job_id']) && isset($_FILES['resume'])) {
+  //     $jobID = $_POST['job_id'];
+  //     $name = $_POST['name'];
+  //     $email = $_POST['email'];
+  //     $resume = $_FILES['resume']['name']; // Note: This is just the filename; you'll need to handle file upload properly
 
-      // ... (code to handle file upload and database insertion goes here) ...
+  //     // ... (code to handle file upload and database insertion goes here) ...
 
-      // For demonstration purposes, we'll just print the data
-      echo "Job ID: $jobID<br>";
-      echo "Name: $name<br>";
-      echo "Email: $email<br>";
-      echo "Resume: $resume<br>";
-    }
-  }
+  //     // For demonstration purposes, we'll just print the data
+  //     echo "Job ID: $jobID<br>";
+  //     echo "Name: $name<br>";
+  //     echo "Email: $email<br>";
+  //     echo "Resume: $resume<br>";
+  //   }
+  // }
 ?>
 
 
@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="./css/slick-theme.css">
 
   <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- Custom CSS Link -->
   <link rel="stylesheet" href="./css/jobs.css">
@@ -63,24 +63,28 @@
   <div class="topnav" id="myTopnav">
     <ul>
       <li><a href="./index.php" class="active"><img src="./images/logo.png" height="50px" width="inherit"
-          style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"></b></b></a>
-      </li>   
+            style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"></b></b></a>
+      </li>
       <li><a href="./index.php">Home</a></li>
-      <li><a href="./jobs.php" >Find Jobs</a></li>
-      <li><a href="./location.php" >Location</a></li>
+      <li><a href="./jobs.php">Find Jobs</a></li>
+      <li><a href="./location.php">Location</a></li>
 
       <?php if(isset($_SESSION['user_role']) && ($_SESSION['user_role']=='user')): ?>
-        <li><a href="">Welcome <?php echo $_SESSION['name']; ?></a></li>
-        <li><a href="./logout.php" style="font-weight: 600; color: red;">Logout</a></li>
+      <li><a href="">Welcome
+          <?php echo $_SESSION['name']; ?>
+        </a></li>
+      <li><a href="./logout.php" style="font-weight: 600; color: red;">Logout</a></li>
       <?php elseif(isset($_SESSION['user_role']) && ($_SESSION['user_role']=='admin')): ?>
-        <li><a href="">Welcome <?php echo $_SESSION['name']; ?></a></li>
-        <li><a href="./admin/dashboard.php">Admin Panel</a></li>
-        <li><a href="./logout.php" style="font-weight: 600; color: red;">Logout</a></li>
+      <li><a href="">Welcome
+          <?php echo $_SESSION['name']; ?>
+        </a></li>
+      <li><a href="./admin/dashboard.php">Admin Panel</a></li>
+      <li><a href="./logout.php" style="font-weight: 600; color: red;">Logout</a></li>
       <?php else: ?>
-        <li><a href="./admin/index.php" >Admin Login</a></li>
-        <li><a href="./login.php" >User Login</a></li>
+      <li><a href="./admin/index.php">Admin Login</a></li>
+      <li><a href="./login.php">User Login</a></li>
       <?php endif; ?>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </ul>
@@ -91,7 +95,8 @@
       <p class="paragraph">
         Your NEW RESUME is just seconds away.
       </p>
-      <p class="caption">Fill in your contact information so we can build a new professional resume that you can use to start applying
+      <p class="caption">Fill in your contact information so we can build a new professional resume that you can use to
+        start applying
         for jobs today.</p>
       <button><a href="./build-resume.php">Get Started</a></button>
     </div>
@@ -121,118 +126,118 @@
         </div>
         <?php
             // Fetch the job postings from the PHP session.
-            $jobPostings = isset($_SESSION["jobPostings"]) ? $_SESSION["jobPostings"] : array();
+            // $jobPostings = isset($_SESSION["jobPostings"]) ? $_SESSION["jobPostings"] : array();
 
             // Pagination logic
-            $jobsPerPage = 5;
-            $totalJobs = count($jobPostings);
-            $totalPages = ceil($totalJobs / $jobsPerPage);
-            $currentPage = isset($_GET['page']) ? max(1, $_GET['page']) : 1;
-            $startIndex = ($currentPage - 1) * $jobsPerPage;
-            $endIndex = min($startIndex + $jobsPerPage - 1, $totalJobs - 1);
+            // $jobsPerPage = 5;
+            // $totalJobs = count($jobPostings);
+            // $totalPages = ceil($totalJobs / $jobsPerPage);
+            // $currentPage = isset($_GET['page']) ? max(1, $_GET['page']) : 1;
+            // $startIndex = ($currentPage - 1) * $jobsPerPage;
+            // $endIndex = min($startIndex + $jobsPerPage - 1, $totalJobs - 1);
 
             // Loop through the job postings and display each job with an "Apply Now" button
-            for ($i = $startIndex; $i <= $endIndex; $i++) {
-              $jobPosting = $jobPostings[$i];
-              echo '<div class="job-listing">';
-              echo '<div class="job-title">' . htmlspecialchars($jobPosting["title"]) . '</div>';
-              echo '<div class="job-description">' . htmlspecialchars($jobPosting["description"]) . '</div>';
-              echo '<div class="contact-info">Contact: ' . htmlspecialchars($jobPosting["location"]) . '</div>';
+            // for ($i = $startIndex; $i <= $endIndex; $i++) {
+            //   $jobPosting = $jobPostings[$i];
+            //   echo '<div class="job-listing">';
+            //   echo '<div class="job-title">' . htmlspecialchars($jobPosting["title"]) . '</div>';
+            //   echo '<div class="job-description">' . htmlspecialchars($jobPosting["description"]) . '</div>';
+            //   echo '<div class="contact-info">Contact: ' . htmlspecialchars($jobPosting["location"]) . '</div>';
 
             
 
               // Add the application form here
-              echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post" enctype="multipart/form-data">';
-              echo '<input type="hidden" name="job_id" value="' . $i . '">'; // Use the index of the job as the job_id
-              echo '<input type="text" name="name" placeholder="Your Name" required>';
-              echo '<input type="email" name="email" placeholder="Your Email" required>';
-              echo '<input type="file" name="resume" accept=".pdf,.doc,.docx" required>';
-              echo '<button type="submit" name="apply_job">Apply Now</button>'; // Add the Apply Now button
-              echo '</form>';
+            //   echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post" enctype="multipart/form-data">';
+            //   echo '<input type="hidden" name="job_id" value="' . $i . '">'; // Use the index of the job as the job_id
+            //   echo '<input type="text" name="name" placeholder="Your Name" required>';
+            //   echo '<input type="email" name="email" placeholder="Your Email" required>';
+            //   echo '<input type="file" name="resume" accept=".pdf,.doc,.docx" required>';
+            //   echo '<button type="submit" name="apply_job">Apply Now</button>'; // Add the Apply Now button
+            //   echo '</form>';
             
-              echo '</div>';
-            }
+            //   echo '</div>';
+            // }
           // ...
           // ... (your existing PHP code)
 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-              if (isset($_POST['apply_job']) && isset($_POST['job_id']) && isset($_FILES['resume'])) {
-                $jobID = $_POST['job_id']; // Get the job ID from the form submission
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $resume = $_FILES['resume']['name']; // Note: This is just the filename; you'll need to handle file upload properly
+            // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            //   if (isset($_POST['apply_job']) && isset($_POST['job_id']) && isset($_FILES['resume'])) {
+            //     $jobID = $_POST['job_id']; // Get the job ID from the form submission
+            //     $name = $_POST['name'];
+            //     $email = $_POST['email'];
+            //     $resume = $_FILES['resume']['name']; // Note: This is just the filename; you'll need to handle file upload properly
               
                 // ... (code to handle file upload and database insertion goes here) ...
               
                 // For demonstration purposes, we'll just print the data
-                echo "Job ID: $jobID<br>";
-                echo "Name: $name<br>";
-                echo "Email: $email<br>";
-                echo "Resume: $resume<br>";
-              }
-            }
+            //     echo "Job ID: $jobID<br>";
+            //     echo "Name: $name<br>";
+            //     echo "Email: $email<br>";
+            //     echo "Resume: $resume<br>";
+            //   }
+            // }
             // ...
         ?>
- 
+
         <?php
           // ... (your existing PHP code)
 
-            use PHPMailer\PHPMailer\PHPMailer;
-            use PHPMailer\PHPMailer\Exception;
+            // use PHPMailer\PHPMailer\PHPMailer;
+            // use PHPMailer\PHPMailer\Exception;
 
-            require 'vendor/autoload.php'; // Adjust the path to autoload.php as per your project structure
+            // require 'vendor/autoload.php'; // Adjust the path to autoload.php as per your project structure
 
-            // ... (your existing PHP code)
+            // // ... (your existing PHP code)
 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-              if (isset($_POST['apply_job']) && isset($_POST['job_id']) && isset($_FILES['resume'])) {
-                // Your existing code to process form data...
+            // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            //   if (isset($_POST['apply_job']) && isset($_POST['job_id']) && isset($_FILES['resume'])) {
+            //     // Your existing code to process form data...
               
-                // Send confirmation email
-                try {
-                  $mail = new PHPMailer(true);
+            //     // Send confirmation email
+            //     try {
+            //       $mail = new PHPMailer(true);
                 
-                  // Server settings
-                  $mail->isSMTP();
-                  $mail->Host       = 'smtp.'; // Replace with your SMTP server address
-                  $mail->SMTPAuth   = true;
-                  $mail->Username   = 'your_smtp_Sridhar.Para@gmail.com'; // Replace with your SMTP username
-                  $mail->Password   = 'your_smtp_Genesis89'; // Replace with your SMTP password
-                  $mail->SMTPSecure = 'tls';
-                  $mail->Port       = 587;
+            //       // Server settings
+            //       $mail->isSMTP();
+            //       $mail->Host       = 'smtp.'; // Replace with your SMTP server address
+            //       $mail->SMTPAuth   = true;
+            //       $mail->Username   = 'your_smtp_Sridhar.Para@gmail.com'; // Replace with your SMTP username
+            //       $mail->Password   = 'your_smtp_Genesis89'; // Replace with your SMTP password
+            //       $mail->SMTPSecure = 'tls';
+            //       $mail->Port       = 587;
                 
-                  // Recipients
-                  $mail->setFrom('fromSridhar.Para@gmail.com', 'Your Name'); // Replace with your email address and name
-                  $mail->addAddress($_POST['email'], $_POST['name']); // Email and name of the applicant
+            //       // Recipients
+            //       $mail->setFrom('fromSridhar.Para@gmail.com', 'Your Name'); // Replace with your email address and name
+            //       $mail->addAddress($_POST['email'], $_POST['name']); // Email and name of the applicant
                 
-                  // Content
-                  $mail->isHTML(true);
-                  $mail->Subject = 'Job Application Confirmation';
-                  $mail->Body    = 'Thank you for applying for the job. We will be in contact soon.';
+            //       // Content
+            //       $mail->isHTML(true);
+            //       $mail->Subject = 'Job Application Confirmation';
+            //       $mail->Body    = 'Thank you for applying for the job. We will be in contact soon.';
                 
-                  $mail->send();
-                } catch (Exception $e) {
-                  // Handle email sending error (optional)
-                }
+            //       $mail->send();
+            //     } catch (Exception $e) {
+            //       // Handle email sending error (optional)
+            //     }
               
-                // For demonstration purposes, we'll just print the data
-                echo "Job ID: $jobID<br>";
-                echo "Name: $name<br>";
-                echo "Email: $email<br>";
-                echo "Resume: $resume<br>";
-              }
-            }
+            //     // For demonstration purposes, we'll just print the data
+            //     echo "Job ID: $jobID<br>";
+            //     echo "Name: $name<br>";
+            //     echo "Email: $email<br>";
+            //     echo "Resume: $resume<br>";
+            //   }
+            // }
         ?>
 
         <!-- Pagination links -->
-        <ul class="pagination">
+        <!-- <ul class="pagination">
           <?php
             for ($page = 1; $page <= $totalPages; $page++) {
               $activeClass = ($page === $currentPage) ? 'active' : '';
               echo '<li><a class="' . $activeClass . '" href="?page=' . $page . '">' . $page . '</a></li>';
             }
           ?>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </div>
@@ -241,9 +246,9 @@
   <div class="jobs">
     <?php
       // jobs.php (Display Saved Job Postings)
-      include('./admin/database.php'); // Include the database connection file
-      $sql = "SELECT * FROM jobs";
-      $result = mysqli_query($con, $sql);
+      // include('./admin/database.php'); // Include the database connection file
+      // $sql = "SELECT * FROM jobs";
+      // $result = mysqli_query($con, $sql);
     ?>
 
     <div class="container">
@@ -251,23 +256,52 @@
       <i class="fa-solid fa-chevron-right next"></i>
 
       <div class="job-postings">
-        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-            <div class="job-item">
-              <?php  
-                $data = $row['job_description'];
-                $substring = substr($data, 0 ,20);
-                $description = $substring."...";
+        <!-- Without php -->
+        <div class="job-item">
+          <h3>
+            Software Developer
+          </h3>
+          <p>
+            A Software Developer is a profession....
+          </p>
+          <p>Location:
+            Vizag
+          </p>
+          <p>
+            abc@gmail.com
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div>
+
+        <!-- Before original Code with php -->
+        <?php //while ($row = mysqli_fetch_assoc($result)) : ?>
+        <!-- <div class="job-item">
+          <?php  
+                // $data = $row['job_description'];
+                // $substring = substr($data, 0 ,20);
+                // $description = $substring."...";
               ?>
-              <h3><?php echo $row['job_title']; ?></h3>
-              <p><?php echo $description; ?></p>
-              <p>Location: <?php echo $row['job_location']; ?></p>
-              <p><?php echo $row['contact_email']; ?></p>
-              <button id="popupButton">Apply</button>
-              <div id="popup" class="popup">
-                <span class="popup-content">Successfully applied</span>
-              </div>
-            </div>
-        <?php endwhile; ?> 
+          <h3>
+            <?php //echo $row['job_title']; ?>
+          </h3>
+          <p>
+            <?php //echo $description; ?>
+          </p>
+          <p>Location:
+            <?php //echo $row['job_location']; ?>
+          </p>
+          <p>
+            <?php //echo $row['contact_email']; ?>
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div> -->
+        <?php //endwhile; ?>
       </div>
     </div>
   </div>
@@ -289,8 +323,8 @@
 
   <div class="content">
     <!-- Your website content goes here -->
-  </div> 
- 
+  </div>
+
   <!-- <footer class="footer">
     <div class="container">
       <div class="footer-content">
@@ -307,7 +341,7 @@
     </div>
   </footer> -->
 
-  <footer class="footer"> 
+  <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="image"><img src="./images/resilient_logo.png" alt=""></div>
@@ -326,7 +360,7 @@
     </div>
   </footer>
 
-  
+
 
   <!-- Jquery Script Tag -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -397,12 +431,12 @@
 
 
   <script>
-    document.getElementById('popupButton').addEventListener('click', function() {
-    var popup = document.getElementById('popup');
-    popup.style.display = 'block';
-    setTimeout(function() {
-      popup.style.display = 'none';
-    }, 2000); // Hide the popup after 2 seconds (2000 milliseconds)
+    document.getElementById('popupButton').addEventListener('click', function () {
+      var popup = document.getElementById('popup');
+      popup.style.display = 'block';
+      setTimeout(function () {
+        popup.style.display = 'none';
+      }, 2000); // Hide the popup after 2 seconds (2000 milliseconds)
     });
   </script>
 

@@ -166,6 +166,10 @@ body {
     margin: 0 10px;
   }
 
+  .footer .footer-content .company-name a{
+    color: #fff;
+  }
+
   /* Style the links on hover if desired */
   .footer-nav a:hover {
     color: #ff6600;

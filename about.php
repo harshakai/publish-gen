@@ -1,18 +1,18 @@
 <?php
 
     // Check if the user is logged in
-    session_start();
+    // session_start();
     // echo $_SESSION['id'];
     // echo $_SESSION['name'];
     // Database Connection
-    require('./includes/config.php');
+    // require('./includes/config.php');
 
-    if($con){
-      // echo "Success";
-    }
-    else{
-      echo "Failure";
-    }
+    // if($con){
+    //   echo "Success";
+    // }
+    // else{
+    //   echo "Failure";
+    // }
 
 ?>
 <!DOCTYPE html>
@@ -45,21 +45,21 @@
       <li><a href="./jobs.php">Find Jobs</a></li>
       <li><a href="./location.php">Location</a></li>
 
-      <?php if(isset($_SESSION['user_role']) && ($_SESSION['user_role']=='user')): ?>
+      <?php //if(isset($_SESSION['user_role']) && ($_SESSION['user_role']=='user')): ?>
       <li><a href="">Welcome
-          <?php echo $_SESSION['name']; ?>
+          <?php //echo $_SESSION['name']; ?>
         </a></li>
       <li><a href="./logout.php" style="font-weight: 600; color: red;">Logout</a></li>
-      <?php elseif(isset($_SESSION['user_role']) && ($_SESSION['user_role']=='admin')): ?>
+      <?php //elseif(isset($_SESSION['user_role']) && ($_SESSION['user_role']=='admin')): ?>
       <li><a href="">Welcome
-          <?php echo $_SESSION['name']; ?>
+          <?php //echo $_SESSION['name']; ?>
         </a></li>
       <li><a href="./admin/dashboard.php">Admin Panel</a></li>
       <li><a href="./logout.php" style="font-weight: 600; color: red;">Logout</a></li>
-      <?php else: ?>
+      <?php //else: ?>
       <li><a href="./admin/index.php">Admin Login</a></li>
       <li><a href="./login.php">User Login</a></li>
-      <?php endif; ?>
+      <?php //endif; ?>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>

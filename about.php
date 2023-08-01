@@ -91,7 +91,7 @@
       </a>
     </ul>
   </div>
-  
+
   <div class="container">
     <div class="para">
       <p>Welcome to Genesis, your premier destination for finding your dream job! At Genesis, we understand that finding
@@ -105,7 +105,7 @@
         
         <p class="directors">
             <p class="director">Managing Director : SRIDHAR</p>   
-            <p class="director">Our CEO : VIJAY KUMAR sir</p>
+            <p class="director">CEO : VIJAY KUMAR sir</p>
         </p>
 
          <!-- <p style="font-weight: 700;font-size: 50px;"></p>

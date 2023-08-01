@@ -87,6 +87,11 @@ li{
   margin: 0 10px;
 }
 
+h2{
+  text-align:center;
+  
+}
+
 /* Style the links on hover if desired */
 .footer-nav a:hover {
   color: #ff6600;

@@ -290,7 +290,7 @@
   <footer class="footer"> 
     <div class="container">
       <div class="footer-content">
-        <div class="image"><img src="./images/resilient_logo.png" alt=""></div>
+        <div class="image"><img src="./images/resilient_logo.png" alt="" width="250px" height="80px"></div>
         <div>
           <nav class="footer-nav">
             <a href="#home">Home</a>

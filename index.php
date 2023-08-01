@@ -175,6 +175,7 @@ p{
 
 
 
+
 @media screen and (max-width:360px){
   h2{
     font-size: 8px;
@@ -289,7 +290,7 @@ margin-top: 60px;
 <body>
 
 <div class="topnav" id="myTopnav">
-    <a href="./index.php" class="active"><img src="Untitled_design-removebg.png" height="35px" width="inherit" style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"><b>GENESIS IT SOLUTIONS</b></b></a>
+    <a href="./index.php" class="active"><img src="aswika desing logo by genius.pnga" height="35px" width="inherit" style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"><b>GENESIS IT SOLUTIONS</b></b></a>
     <a href="./jobs.php" style="font-size: 14px;margin-top: 5px;">Find Jobs</a>
     <a href="./location.php" style="font-size: 14px;margin-top: 5px;">Location</a>
     <a href="./admin/index.php" style="font-size: 14px;margin-top: 5px;">Admin Login</a>

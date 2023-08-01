@@ -276,6 +276,158 @@
           </div>
         </div>
 
+        <div class="job-item">
+          <h3>
+            Software Developer
+          </h3>
+          <p>
+            A Software Developer is a profession....
+          </p>
+          <p>Location:
+            Vizag
+          </p>
+          <p>
+            abc@gmail.com
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <h3>
+            Software Developer
+          </h3>
+          <p>
+            A Software Developer is a profession....
+          </p>
+          <p>Location:
+            Vizag
+          </p>
+          <p>
+            abc@gmail.com
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <h3>
+            Software Developer
+          </h3>
+          <p>
+            A Software Developer is a profession....
+          </p>
+          <p>Location:
+            Vizag
+          </p>
+          <p>
+            abc@gmail.com
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <h3>
+            Software Developer
+          </h3>
+          <p>
+            A Software Developer is a profession....
+          </p>
+          <p>Location:
+            Vizag
+          </p>
+          <p>
+            abc@gmail.com
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <h3>
+            Software Developer
+          </h3>
+          <p>
+            A Software Developer is a profession....
+          </p>
+          <p>Location:
+            Vizag
+          </p>
+          <p>
+            abc@gmail.com
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <h3>
+            Software Developer
+          </h3>
+          <p>
+            A Software Developer is a profession....
+          </p>
+          <p>Location:
+            Vizag
+          </p>
+          <p>
+            abc@gmail.com
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <h3>
+            Software Developer
+          </h3>
+          <p>
+            A Software Developer is a profession....
+          </p>
+          <p>Location:
+            Vizag
+          </p>
+          <p>
+            abc@gmail.com
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <h3>
+            Software Developer
+          </h3>
+          <p>
+            A Software Developer is a profession....
+          </p>
+          <p>Location:
+            Vizag
+          </p>
+          <p>
+            abc@gmail.com
+          </p>
+          <button id="popupButton">Apply</button>
+          <div id="popup" class="popup">
+            <span class="popup-content">Successfully applied</span>
+          </div>
+        </div>
+
         <!-- Before original Code with php -->
         <?php //while ($row = mysqli_fetch_assoc($result)) : ?>
         <!-- <div class="job-item">

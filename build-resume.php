@@ -81,9 +81,8 @@
 
   <div class="topnav" id="myTopnav">
     <ul>
-      <li><a href="./index.php" class="active"><img src="Untitled_design-removebg.png" height="35px" width="inherit"
-            style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"><b>GENESIS IT
-              SOLUTIONS</b></b></a>
+      <li><a href="./index.php" class="active"><img src="./images/logo.png" height="50px" width="inherit"
+          style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"></b></b></a>
       </li>
       <li><a href="./index.php">Home</a></li>
       <li><a href="./jobs.php">Find Jobs</a></li>

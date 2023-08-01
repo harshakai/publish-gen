@@ -7,7 +7,7 @@
     array("title" => "Job Title 2", "description" => "Job Description 2", "location" => "Location 2"),
   )
 
-?>
+?> 
 
 
 <?php
@@ -53,471 +53,18 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto Condensed', sans-serif;
-    }
+  <!-- Custom CSS Link -->
+  <link rel="stylesheet" href="./css/jobs.css">
 
-    a {
-      text-decoration: none;
-      color: black;
-    }
-
-    li {
-      list-style: none;
-    }
-
-    .topnav {
-      overflow: hidden;
-      background-color: #0047AB;
-    }
-
-    .topnav ul{
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    .topnav ul li{
-      font-size: 14px;
-      margin: 5px;
-    }
-
-    .topnav a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    .topnav a.active {
-      background-color: #0047AB;
-      color: white;
-    }
-
-    .topnav .icon {
-      display: none;
-    }
-
-    .header-1 {
-      background-color: #0047AB;
-      width: 100%;
-      height: 20vh;
-
-    }
-
-    .header-1 h1 {
-      padding-top: 2%;
-
-    }
-
-    .search {
-      display: flex;
-      flex-direction: row;
-    }
-
-    h4 {
-      color: #fff;
-    }
-
-    h1 {
-      color: #ffff;
-    }
-
-    .header-2 {
-      display: flex;
-      flex-direction: row;
-      background-color: rgb(255, 213, 0);
-    }
-
-    .head-para {
-      width: 50%;
-      height: auto;
-    }
-
-    .head-img {
-      width: 50%;
-      height: auto;
-    }
-
-    .head-para h1 {
-      color: black;
-    }
-
-    .responsive {
-      width: 100%;
-      height: auto;
-    }
-
-    input {
-      height: 40px;
-      width: fit-content;
-      border-radius: 5px;
-    }
-
-    .btn-1 {
-      height: 40px;
-      width: fit-content;
-      border-radius: 5px;
-      background-color: rgb(43, 43, 235);
-      color: #fff;
-    }
-
-    button {
-      width: fit-content;
-      height: 40px;
-      border-radius: 5px;
-      border-style: solid;
-      background-color: rgb(43, 43, 235);
-
-    }
-
-    a {
-      color: #fff;
-    }
-
-    .head-para {
-      width: 40%;
-      margin-left: 5%;
-      margin-top: 20%;
-
-    }
-
-    .paragraph {
-      font-size: 60px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px 0;
-    }
-
-    .footer-nav {
-      margin-bottom: 10px;
-    }
-
-    .footer-nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    /* Style the links on hover if desired */
-    .footer-nav a:hover {
-      color: #ff6600;
-    }
-
-    .logo {
-      margin-bottom: 10px;
-    }
-
-    .jobs{
-      position: relative;
-    }
-
-    .jobs .container{
-      width: 100%;
-    }
-
-    .jobs .prev{
-      position: absolute;
-      top: 45%;
-      left: 100px;
-      font-size: 30px;
-      color: #0047AB;
-      cursor: pointer;
-    } 
-
-    .jobs .next{
-      position: absolute;
-      top: 45%;
-      right: 100px;
-      font-size: 30px;
-      color: #0047AB;
-      cursor: pointer;
-    } 
-
-    .job .job-listing {
-      border: 2px solid #0047AB;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      text-align: left;
-    }
-
-    .job .job-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .job .job-description {
-      margin-bottom: 10px;
-    }
-
-    .job .contact-info {
-      color: #666;
-      margin-bottom: 10px;
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #f9f9f9;
-      padding: 16px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .popup-content {
-      color: #333;
-    }
-
-
-    /* Centering and Responsive Width */
-    @media screen and (max-width: 800px) {
-      .job .job-listing {
-        width: 100%;
-      }
-    }
-
-    @media screen and (min-width: 801px) and (max-width: 1200px) {
-      .job .job-listing {
-        width: 90%;
-        margin: 0 auto;
-      }
-    }
-
-    @media screen and (min-width: 1201px) {
-      .job .job-listing {
-        width: 70%;
-        margin: 0 auto;
-      }
-    }
-
-    .pagination {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .pagination li {
-      list-style: none;
-      margin: 5px;
-    }
-
-    .pagination a {
-      text-decoration: none;
-      padding: 5px 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      color: #000;
-    }
-
-    .pagination a.active {
-      background-color: #0047AB;
-      color: #fff;
-    }
-
-    .pagination a:hover {
-      background-color: #ddd;
-    }
-
-    .job-item {
-      text-align: start;
-      height: 300px;
-      width: 20%;
-      border-radius: 20px;
-      border: 2px solid gray;
-      /* border-style: solid;
-      border-color: gray;
-      border-width: 2px; */
-      padding: 10px;
-      margin: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .job-item h3 {
-      font-size: 30px;
-      margin: 2%
-    }
-
-
-    .btn-1 {
-      height: 40px;
-      background-color: blue;
-      width: 100%;
-    }
-
-    .job-item p {
-      font-size: 20px;
-      margin: 2%
-    }
-
-    @media screen and (max-width: 600px) {
-      .topnav a:not(:first-child) {
-        display: none;
-      }
-
-      .topnav a.icon {
-        float: right;
-        display: block;
-      }
-
-      .head-para {
-        width: 30%;
-        margin-left: 5%;
-        margin-top: 20%;
-
-      }
-
-      .paragraph {
-        width: 30%;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .topnav.responsive {
-        position: relative;
-      }
-
-      .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-
-      .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-
-      .header-1 {
-        width: 100%;
-        height: auto;
-      }
-
-      .where {
-        margin-bottom: -3%;
-        margin-top: 2%;
-      }
-    }
-
-    @media screen and (max-width: 800px) {
-      .search {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .header-2 {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .header-1 {
-        height: 60vh;
-        width: 100%;
-      }
-
-      .head-para {
-        width: 100%;
-      }
-
-      .head-img {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .head-para {
-        width: 80%;
-        margin-left: 5%;
-        margin-top: 20%;
-
-      }
-
-      .paragraph {
-        width: 80%;
-      }
-
-    }
-
-
-    @media screen and (max-width: 700px) {
-      .header-1 {
-        width: 100%;
-        height: 60vh;
-
-      }
-
-      p.paragraph {
-
-        font-size: 30px;
-      }
-
-    }
-
-    @media screen and (max-width: 200px) {
-      .header-1 {
-        width: 100%;
-        height: 60vh;
-
-      }
-
-
-    }
-
-    @media screen and (max-width: 400px) {
-      .header-1 {
-        width: 100%;
-        height: 60vh;
-
-      }
-
-      p.paragraph {
-
-        font-size: 20px;
-      }
-
-    }
-  </style>
 </head>
 
 <body>
 
   <div class="topnav" id="myTopnav">
     <ul>
-      <li><a href="./index.php" class="active"><img src="aswika desing logo by genius.png" height="35px" width="inherit"
-          style="margin-right: 5px;">
-          </a>
-      </li>
+      <li><a href="./index.php" class="active"><img src="./images/logo.png" height="50px" width="inherit"
+          style="margin-right: 5px;"><b style="color: rgb(211, 136, 136);font-size: 20px;"></b></b></a>
+      </li>   
       <li><a href="./index.php">Home</a></li>
       <li><a href="./jobs.php" >Find Jobs</a></li>
       <li><a href="./location.php" >Location</a></li>
@@ -542,14 +89,14 @@
   <div class="header-2">
     <div class="head-para">
       <p class="paragraph">
-        your new resume is just seconds away.
+        Your NEW RESUME is just seconds away.
       </p>
-      <p>Fill in your contact information so we can build a new professional resume that you can use to start applying
+      <p class="caption">Fill in your contact information so we can build a new professional resume that you can use to start applying
         for jobs today.</p>
       <button><a href="./build-resume.php">Get Started</a></button>
     </div>
     <div class="head-img">
-      <img src="resume_yellowBG_1.svg" class="responsive" height="300" width="600">
+      <img src="./images/resume_yellowBG_1.svg" class="responsive">
     </div>
   </div>
 
@@ -559,6 +106,8 @@
 
   <!-- ... (your existing HTML content) ... -->
 
+
+  <!------- JOBS SECTION ------------>
   <div class="job">
     <div class="job-lists">
       <div class="container">
@@ -567,8 +116,9 @@
 
 
         <!-- NEW JOBS section -->
-        <h2 style="width:50%;height:auto;background-color:yellow;border-radius:20px;padding:2%;text-align:center;">NEW
-          JOBS</h2>
+        <div class="heading">
+          <h2>NEW JOBS</h2>
+        </div>
         <?php
             // Fetch the job postings from the PHP session.
             $jobPostings = isset($_SESSION["jobPostings"]) ? $_SESSION["jobPostings"] : array();
@@ -691,7 +241,7 @@
   <div class="jobs">
     <?php
       // jobs.php (Display Saved Job Postings)
-      include('./database.php'); // Include the database connection file
+      include('./admin/database.php'); // Include the database connection file
       $sql = "SELECT * FROM jobs";
       $result = mysqli_query($con, $sql);
     ?>
@@ -717,7 +267,7 @@
                 <span class="popup-content">Successfully applied</span>
               </div>
             </div>
-        <?php endwhile; ?>
+        <?php endwhile; ?> 
       </div>
     </div>
   </div>
@@ -739,9 +289,9 @@
 
   <div class="content">
     <!-- Your website content goes here -->
-  </div>
-
-  <footer class="footer">
+  </div> 
+ 
+  <!-- <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <nav class="footer-nav">
@@ -752,7 +302,26 @@
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </nav>
-        <p>&copy; 2023 <a href="http://pravishree.com">pravishree design co.</a></p>
+        <p>&copy; 2023 <a href="http://pravishree.com">Pravishree Design Co.</a></p>
+      </div>
+    </div>
+  </footer> -->
+
+  <footer class="footer"> 
+    <div class="container">
+      <div class="footer-content">
+        <div class="image"><img src="./images/resilient_logo.png" alt=""></div>
+        <div>
+          <nav class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="company-name">
+          <p>&copy; 2023 <a href="http://pravishree.com">pravishree design co. All rights reserved</a></p>
+        </div>
       </div>
     </div>
   </footer>

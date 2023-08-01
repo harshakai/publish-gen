@@ -214,9 +214,9 @@ body {
                 <input type="submit" name="register" class="btn" value="Register">
             </div>
 </form>
-      <a href="/login.php">Already have an account</a>
+      <a href="./login.php">Already have an account</a>
       <br>
-      <a href="/index.php">back</a>
+      <a href="./index.php">back</a>
     </form>
     <p id="message"></p>
   </div>
@@ -242,10 +242,10 @@ function myFunction() {
       <nav class="footer-nav">
         <div class="logo">
         </div>
-        <a href="/index.php">Home</a>
-        <a href="/about.html">About</a>
+        <a href="./index.php">Home</a>
+        <a href="./about.html">About</a>
         <a href="#services">Services</a>
-        <a href="/location.php">Contact</a>
+        <a href="./location.php">Contact</a>
       </nav>
       <p>&copy; 2023 <a href="http://pravishree.com">pravishree design co.</a></p>
     </div>

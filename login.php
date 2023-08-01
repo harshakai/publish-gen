@@ -12,8 +12,6 @@ if (isset($_POST['login'])) {
     $num = mysqli_fetch_array($ret);
     if ($num > 0) {
 
-
-
         $_SESSION['id'] = $num['id'];
         $_SESSION['name'] = $num['fname'];
         $_SESSION['user_role'] = $num['user_role']; // Store the user role in the session
@@ -51,7 +49,11 @@ if (isset($_POST['login'])) {
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>GENESIS User Login | Registration and Login System</title>
+
+    <!-- Custom CSS file -->
     <link href="css/styles.css" rel="stylesheet" />
+    
+    <!-- Font Awesome Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
         crossorigin="anonymous"></script>
 </head>
@@ -105,7 +107,7 @@ if (isset($_POST['login'])) {
             </main>
         </div>
 
-        <?php include('./includes/footer.php');?>
+        <?php include('includes/footer.php');?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>

@@ -293,7 +293,7 @@ margin-top: 60px;
     <a href="./jobs.php" style="font-size: 14px;margin-top: 5px;">Find Jobs</a>
     <a href="./location.php" style="font-size: 14px;margin-top: 5px;">Location</a>
     <a href="./admin/admin_login.php" style="font-size: 14px;margin-top: 5px;">Admin Login</a>
-    <a href="./login.php" style="font-size: 14px;margin-top: 5px;">User Login</a>
+    <a href="login.php" style="font-size: 14px;margin-top: 5px;">User Login</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>

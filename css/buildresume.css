@@ -133,22 +133,22 @@ body {
   }
 
   .footer .footer-content div {
-    padding: 10px 30px;
+    padding: 10px 0px;
   }
   
   .footer .footer-content .image {
     /* margin-right: 300px; */
     /* margin-left: -20%; */
-    padding: 10px 30px;
+    padding: 10px 0px;
     position: relative;
-    left: -20%;
+    /* left: -20%; */
   }
   
   .footer .footer-content .company-name {
     padding: 10px 30px;
     /* margin-right: -20%; */
     position: relative;
-    right: -10%;
+    /* right: -10%; */
   }
   
   .footer img {

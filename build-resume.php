@@ -27,52 +27,52 @@
 
 <?php
     // Include the database connection
-    require_once './includes/config.php';
+    // require_once './includes/config.php';
 
     // Check if the form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Sanitize and store form data
-        $name = sanitize_input($_POST["name"]);
-        $email = sanitize_input($_POST["email"]);
-        $phone = sanitize_input($_POST["phone"]);
-        $summary = sanitize_input($_POST["summary"]);
-        $education = sanitize_input($_POST["education"]);
-        $experience = sanitize_input($_POST["experience"]);
-        $skills = sanitize_input($_POST["skills"]);
-        $resume_references = sanitize_input($_POST["resume_references"]);
+    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //     // Sanitize and store form data
+    //     $name = sanitize_input($_POST["name"]);
+    //     $email = sanitize_input($_POST["email"]);
+    //     $phone = sanitize_input($_POST["phone"]);
+    //     $summary = sanitize_input($_POST["summary"]);
+    //     $education = sanitize_input($_POST["education"]);
+    //     $experience = sanitize_input($_POST["experience"]);
+    //     $skills = sanitize_input($_POST["skills"]);
+    //     $resume_references = sanitize_input($_POST["resume_references"]);
 
-        $target = "./resumes/";
-        $filename = $_FILES['resume_file']['name'];
-        $filetype = strtolower(pathinfo($_FILES['resume_file']['name'],PATHINFO_EXTENSION));
-        $target_file = $target.basename(md5('resumeid'.$_FILES['resume_file']['name']).".".$filetype);
-        $file = md5('resumeid'.$_FILES['resume_file']['name']).".".$filetype;
+    //     $target = "./resumes/";
+    //     $filename = $_FILES['resume_file']['name'];
+    //     $filetype = strtolower(pathinfo($_FILES['resume_file']['name'],PATHINFO_EXTENSION));
+    //     $target_file = $target.basename(md5('resumeid'.$_FILES['resume_file']['name']).".".$filetype);
+    //     $file = md5('resumeid'.$_FILES['resume_file']['name']).".".$filetype;
 
-        do{
-            if(empty($name) || empty($email) || empty($phone) || empty($summary) || empty($education) || empty($experience) || empty($skills) || empty($resume_references) || empty($file)){
-                echo "All Fields are Required!!!";
-                break;
-            }
-            else{
-                if($filetype == "pdf" || $filetype == "doc" || $filetype == "docx"){
-                    if(move_uploaded_file($_FILES['resume_file']['tmp_name'],$target_file)){
-                        $sql = mysqli_query($con,"INSERT INTO `resumes`(`name`, `email`, `phone`, `summary`, `education`, `experience`, `skills`, `resume_references`, `resumes`) 
-                        VALUES ('$name','$email','$phone','$summary','$education','$experience','$skills','$resume_references','$file')");
-                        if($sql){
-                            echo "You have succesfully added a Member";
-                            header('Location: index.php');
-                            exit;
-                        }else{
-                            echo "Something went wrong !!!";
-                        }
-                    }else{
-                        echo "File Not Moved!!!";
-                    }
-                }else{
-                    echo "File Not Accepted !!!";
-                }
-            }
-        }while(false);
-    }
+    //     do{
+    //         if(empty($name) || empty($email) || empty($phone) || empty($summary) || empty($education) || empty($experience) || empty($skills) || empty($resume_references) || empty($file)){
+    //             echo "All Fields are Required!!!";
+    //             break;
+    //         }
+    //         else{
+    //             if($filetype == "pdf" || $filetype == "doc" || $filetype == "docx"){
+    //                 if(move_uploaded_file($_FILES['resume_file']['tmp_name'],$target_file)){
+    //                     $sql = mysqli_query($con,"INSERT INTO `resumes`(`name`, `email`, `phone`, `summary`, `education`, `experience`, `skills`, `resume_references`, `resumes`) 
+    //                     VALUES ('$name','$email','$phone','$summary','$education','$experience','$skills','$resume_references','$file')");
+    //                     if($sql){
+    //                         echo "You have succesfully added a Member";
+    //                         header('Location: index.php');
+    //                         exit;
+    //                     }else{
+    //                         echo "Something went wrong !!!";
+    //                     }
+    //                 }else{
+    //                     echo "File Not Moved!!!";
+    //                 }
+    //             }else{
+    //                 echo "File Not Accepted !!!";
+    //             }
+    //         }
+    //     }while(false);
+    // }
 
 ?>
 
@@ -204,12 +204,12 @@
 // 
 // 
 // Function to sanitize user input
-function sanitize_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
+// function sanitize_input($data) {
+//   $data = trim($data);
+//   $data = stripslashes($data);
+//   $data = htmlspecialchars($data);
+//   return $data;
+// }
 ?>
   <div class="resume-preview">
     <h1>Resume Preview</h1>

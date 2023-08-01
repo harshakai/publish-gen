@@ -1,39 +1,39 @@
 <?php 
     session_start();
 
-    include_once('includes/config.php');
+    // include_once('includes/config.php');
 
 // Code for login
-if (isset($_POST['login'])) {
-    $password = $_POST['password'];
-    $dec_password = $password;
-    $useremail = $_POST['uemail'];
-    $ret = mysqli_query($con, "SELECT id, fname, user_role FROM users WHERE email='$useremail' and password='$dec_password'");
-    $num = mysqli_fetch_array($ret);
-    if ($num > 0) {
+// if (isset($_POST['login'])) {
+//     $password = $_POST['password'];
+//     $dec_password = $password;
+//     $useremail = $_POST['uemail'];
+//     $ret = mysqli_query($con, "SELECT id, fname, user_role FROM users WHERE email='$useremail' and password='$dec_password'");
+//     $num = mysqli_fetch_array($ret);
+//     if ($num > 0) {
 
-        $_SESSION['id'] = $num['id'];
-        $_SESSION['name'] = $num['fname'];
-        $_SESSION['user_role'] = $num['user_role']; // Store the user role in the session
+//         $_SESSION['id'] = $num['id'];
+//         $_SESSION['name'] = $num['fname'];
+//         $_SESSION['user_role'] = $num['user_role']; // Store the user role in the session
 
-        // echo $_SESSION['id']; 
-        // echo $_SESSION['name'];
-        // echo $_SESSION['user_role'];
+//         // echo $_SESSION['id']; 
+//         // echo $_SESSION['name'];
+//         // echo $_SESSION['user_role'];
 
-        header("location: index.php");
+//         header("location: index.php");
     
-        // if ($num['user_role'] === 'admin') {
-        //     header("location: ./admin/dashboard.php"); // Redirect to the admin dashboard page 
-        // } else {
-        //     // Redirect to index.php with the username as a query parameter
-        //     // header("location: index.php?username=" . urlencode($num['fname']));
-        //     header("location: index.php");
-        // }
-    } else {
-        echo "<script>alert('Invalid username or password');</script>";
-    }
+//         // if ($num['user_role'] === 'admin') {
+//         //     header("location: ./admin/dashboard.php"); // Redirect to the admin dashboard page 
+//         // } else {
+//         //     // Redirect to index.php with the username as a query parameter
+//         //     // header("location: index.php?username=" . urlencode($num['fname']));
+//         //     header("location: index.php");
+//         // }
+//     } else {
+//         echo "<script>alert('Invalid username or password');</script>";
+//     }
     
-}
+// }
 ?>
 
 <!-- Your existing HTML content and the rest of the code below -->

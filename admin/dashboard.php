@@ -1,7 +1,7 @@
-<?php session_start();
-include_once('./database.php');
-if (($_SESSION['user_role']=='admin')) {
-    
+<?php 
+    session_start();
+    // include_once('./database.php');
+    // if (($_SESSION['user_role']=='admin')) {
 ?>
 
 <!DOCTYPE html>
@@ -33,15 +33,15 @@ if (($_SESSION['user_role']=='admin')) {
                     </ol>
                     <div class="row">
                         <?php
-                            $query=mysqli_query($con,"select id from users");
-                            $totalusers=mysqli_num_rows($query);
+                            // $query=mysqli_query($con,"select id from users");
+                            // $totalusers=mysqli_num_rows($query);
                         ?>
 
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">
                                 <div class="card-body">Total Registered Users
                                     <span style="font-size:22px;">
-                                        <?php echo $totalusers;?>
+                                        <?php //echo $totalusers;?>
                                     </span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
@@ -51,15 +51,15 @@ if (($_SESSION['user_role']=='admin')) {
                             </div>
                         </div>
                         <?php
-                            $query1=mysqli_query($con,"select id from users where date(posting_date)=CURRENT_DATE()-1");
-                            $yesterdayregusers=mysqli_num_rows($query1);
+                            // $query1=mysqli_query($con,"select id from users where date(posting_date)=CURRENT_DATE()-1");
+                            // $yesterdayregusers=mysqli_num_rows($query1);
                         ?>
 
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-warning text-white mb-4">
                                 <div class="card-body">Yesterday Registered Users
                                     <span style="font-size:22px;">
-                                        <?php echo $yesterdayregusers;?>
+                                        <?php // echo $yesterdayregusers;?>
                                     </span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
@@ -71,15 +71,15 @@ if (($_SESSION['user_role']=='admin')) {
                         </div>
 
                         <?php
-                            $query2=mysqli_query($con,"select id from users where date(posting_date)>=now() - INTERVAL 7 day");
-                            $last7daysregusers=mysqli_num_rows($query2);
+                            // $query2=mysqli_query($con,"select id from users where date(posting_date)>=now() - INTERVAL 7 day");
+                            // $last7daysregusers=mysqli_num_rows($query2);
                         ?>
 
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-success text-white mb-4">
                                 <div class="card-body"> Registered Users in Last 7 Days
                                     <span style="font-size:22px;">
-                                        <?php echo $last7daysregusers;?>
+                                        <?php //echo $last7daysregusers;?>
                                     </span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
@@ -91,15 +91,15 @@ if (($_SESSION['user_role']=='admin')) {
                         </div>
 
                         <?php
-                            $query3=mysqli_query($con,"select id from users where date(posting_date)>=now() - INTERVAL 30 day");
-                            $last30daysregusers=mysqli_num_rows($query3);
+                            // $query3=mysqli_query($con,"select id from users where date(posting_date)>=now() - INTERVAL 30 day");
+                            // $last30daysregusers=mysqli_num_rows($query3);
                         ?>
 
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-danger text-white mb-4">
                                 <div class="card-body">Registered Users in Last 30 Days
                                     <span style="font-size:22px;">
-                                        <?php echo $last30daysregusers;?>
+                                        <?php // echo $last30daysregusers;?>
                                     </span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
@@ -142,8 +142,8 @@ if (($_SESSION['user_role']=='admin')) {
 
 </html>
 <?php 
-    }
-    else{
-        header('location:logout.php');
-    }    
+    // }
+    // else{
+    //     header('location:logout.php');
+    // }    
 ?>

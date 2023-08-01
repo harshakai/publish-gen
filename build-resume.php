@@ -98,7 +98,7 @@
       <li><a href="">Welcome
           <?php echo $_SESSION['name']; ?>
         </a></li>
-      <li><a href="./admin/dashboard.php">Admin Panel</a></li>
+      <li><a href="./admin/dashboard.php">Admin-Panel</a></li>
       <li><a href="./logout.php" style="font-weight: 600; color: red;">Logout</a></li>
       <?php else: ?>
       <li><a href="./admin/index.php">Admin Login</a></li>

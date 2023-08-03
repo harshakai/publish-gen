@@ -1,33 +1,10 @@
-<!-- <?php
+<?php
 
   session_start();
-  
-  // $jobs = array(
-  //   array("title" => "Job Title 1", "description" => "Job Description 1", "location" => "Location 1"),
-  //   array("title" => "Job Title 2", "description" => "Job Description 2", "location" => "Location 2"),
-  // )
+
+  include_once('./config.php');
 
 ?>
-
-
-<?php
-  // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  //   if (isset($_POST['apply_job']) && isset($_POST['job_id']) && isset($_FILES['resume'])) {
-  //     $jobID = $_POST['job_id'];
-  //     $name = $_POST['name'];
-  //     $email = $_POST['email'];
-  //     $resume = $_FILES['resume']['name']; // Note: This is just the filename; you'll need to handle file upload properly
-
-  //     // ... (code to handle file upload and database insertion goes here) ...
-
-  //     // For demonstration purposes, we'll just print the data
-  //     echo "Job ID: $jobID<br>";
-  //     echo "Name: $name<br>";
-  //     echo "Email: $email<br>";
-  //     echo "Resume: $resume<br>";
-  //   }
-  // }
-?> -->
 
 
 <!DOCTYPE html>
@@ -36,14 +13,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+
 
     <title>GENESIS IT SOLUTIONS-Jobs</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
 
     <!-- Jquery CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js">
@@ -99,10 +76,10 @@
             <li><a href="./index.html" class="active"><img src="./images/logo.png" height="50px" width="inherit"></a>
             </li>
             <li><a href="./index.html">Home</a></li>
-            <li><a href="./jobs.html">Find Jobs</a></li>
+            <li><a href="./jobs.php">Find Jobs</a></li>
             <li><a href="./location.html">Location</a></li>
-            <li><a href="./adminlogin.html">Admin Login</a></li>
-            <li><a href="./userlogin.html">User Login</a></li>
+            <li><a href="./adminlogin.php">Admin Login</a></li>
+            <li><a href="./userlogin.php">User Login</a></li>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
         </ul>
@@ -117,7 +94,7 @@
             </p>
             <p class="caption">Fill in your contact information so we can build a new professional resume that you can
                 use to start applying for jobs today.</p>
-            <button><a href="./buildresume.html">Get Started</a></button>
+            <button><a href="#">Upload your Resume</a></button>
         </div>
         <div class="image-section">
             <img src="./images/resume.svg" class="responsive">
@@ -145,6 +122,38 @@
                 <i class="fa-solid fa-chevron-right next"></i>
 
                 <div class="job-postings">
+
+                    <?php
+
+                        $jobs = mysqli_query($db,"SELECT * FROM `jobs`");
+                        $count = mysqli_num_rows($jobs);
+
+                        if(!$jobs){
+                            die("Query Failed.....".mysqli_error($db));
+                        }
+                        else{
+                            // echo "Data fetched";
+                            while($row = mysqli_fetch_assoc($jobs)){
+                                $description = $row['description'];
+                                $substring = substr($description,0,10);
+                                $description = $substring."...";
+                                echo "
+                                    <div class='job-item'>
+                                        <h3>$row[title]</h3>
+                                        <p>$description</p>
+                                        <p>Location: $row[location]</p>
+                                        <p>Email: $row[email]</p>
+                                        <a href='./single-job.php?id=$row[id]' id='popup'>Read More</a>
+                                        <div id='popup' class='popup'>
+                                            <span class='popup-content'>Successfully applied</span>
+                                        </div>
+                                    </div>
+                                ";
+                            }
+                        }
+
+                    ?>
+
                     <div class="job-item">
                         <h3>
                             Software Developer
@@ -158,8 +167,7 @@
                         <p>
                             abc@gmail.com
                         </p>
-                        <a href="./single-job.html" id="popup">Read More</a>
-                        <!-- <button id="popupButton">Apply</button> -->
+                        <a href="./single-job.php" id="popup">Read More</a>
                         <div id="popup" class="popup">
                             <span class="popup-content">Successfully applied</span>
                         </div>
@@ -342,29 +350,6 @@
     </footer>
 
 
-    <!-------------------------------- BALANCE CODE ------------------------>
-
-
-    <!-- <nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="/jobs.php">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </nav> -->
-
-    <div class="content">
-        <!-- Your website content goes here -->
-    </div>
-
-    <div class="content">
-        <!-- Your website content goes here -->
-    </div>
-
-
-
     <!-- Jquery Script Tag -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
@@ -375,7 +360,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    
+    <!----------- NAVBAR RESPONSIVE --------------->
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
@@ -386,7 +372,9 @@
             }
         }
     </script>
-    <script>
+
+    <!------------------------------- For Jobs Refreshing ------------------------>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             const refreshButton = document.getElementById("refresh-btn");
             refreshButton.addEventListener("click", function () {
@@ -419,23 +407,23 @@
             const jobListing = document.createElement("div");
             jobListing.classList.add("job-listing");
             jobListing.innerHTML = `
-    <div class="job-title">${job.title}</div>
-    <div class="job-description">${job.description}</div>
-    <div class="contact-info">Contact: ${job.location}</div>
-    <form action="${window.location.href}" method="post" enctype="multipart/form-data">
-      <input type="hidden" name="job_id" value="${job.id}">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
-      <button type="submit" name="apply_job" class="btn-1">Apply Now</button>
-    </form>
-  `;
+                <div class="job-title">${job.title}</div>
+                <div class="job-description">${job.description}</div>
+                <div class="contact-info">Contact: ${job.location}</div>
+                <form action="${window.location.href}" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="job_id" value="${job.id}">
+                  <input type="text" name="name" placeholder="Your Name" required>
+                  <input type="email" name="email" placeholder="Your Email" required>
+                  <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+                  <button type="submit" name="apply_job" class="btn-1">Apply Now</button>
+                </form>
+            `;
 
             return jobListing;
         }
-    </script>
+    </script> -->
 
-
+    <!--  
     <script>
         document.getElementById('popupButton').addEventListener('click', function () {
             var popup = document.getElementById('popup');
@@ -445,6 +433,7 @@
             }, 2000); // Hide the popup after 2 seconds (2000 milliseconds)
         });
     </script>
+    -->
 
 </body>
 

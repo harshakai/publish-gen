@@ -1,40 +1,48 @@
-<!-- <?php 
+<?php 
     session_start();
 
-    // include_once('includes/config.php');
+    include_once('./config.php');
 
-// Code for login
-// if (isset($_POST['login'])) {
-//     $password = $_POST['password'];
-//     $dec_password = $password;
-//     $useremail = $_POST['uemail'];
-//     $ret = mysqli_query($con, "SELECT id, fname, user_role FROM users WHERE email='$useremail' and password='$dec_password'");
-//     $num = mysqli_fetch_array($ret);
-//     if ($num > 0) {
+    // Code for login
+    if($_SERVER["REQUEST_METHOD"] ==  "POST")
+    {       
+        $useremail = $_POST['uemail'];
+        $password = $_POST['password'];
+        
+        // $dec_password = $password;
+        
+        $sql = mysqli_query($db, "SELECT * FROM `users` WHERE email='$useremail' and password='$password'");
+        
+        $row = mysqli_fetch_array($sql);
+        if ($row > 0) {
 
-//         $_SESSION['id'] = $num['id'];
-//         $_SESSION['name'] = $num['fname'];
-//         $_SESSION['user_role'] = $num['user_role']; // Store the user role in the session
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['name'] = $row['fname'];
+            $_SESSION['user_role'] = $row['user_role']; 
 
-//         // echo $_SESSION['id']; 
-//         // echo $_SESSION['name'];
-//         // echo $_SESSION['user_role'];
+            // echo "<script>alert('Login successfully');</script>";
 
-//         header("location: index.php");
-    
-//         // if ($num['user_role'] === 'admin') {
-//         //     header("location: ./admin/dashboard.php"); // Redirect to the admin dashboard page 
-//         // } else {
-//         //     // Redirect to index.php with the username as a query parameter
-//         //     // header("location: index.php?username=" . urlencode($num['fname']));
-//         //     header("location: index.php");
-//         // }
-//     } else {
-//         echo "<script>alert('Invalid username or password');</script>";
-//     }
-    
-// }
-?> -->
+            header("location: index.html");
+            
+            // echo $_SESSION['id']; 
+            // echo $_SESSION['name'];
+            // echo $_SESSION['user_role'];
+
+
+        
+            // if ($num['user_role'] === 'admin') {
+            //     header("location: ./admin/dashboard.php"); // Redirect to the admin dashboard page 
+            // } else {
+            //     // Redirect to index.php with the username as a query parameter
+            //     // header("location: index.php?username=" . urlencode($num['fname']));
+            //     header("location: index.php");
+            // }
+        } else {
+            echo "<script>alert('Invalid username or password');</script>";
+        }
+
+    }
+?>
 
 <!-- Your existing HTML content and the rest of the code below -->
 
@@ -48,7 +56,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>GENESIS User Login | Registration and Login System</title>
+
+    <title>GENESIS IT SOLUTIONS | User Login</title>
 
     <!-- Custom CSS file -->
     <link rel="stylesheet" href="./css/userlogin.css">
@@ -73,7 +82,7 @@
                                 </div>
                                 <div class="card-body">
 
-                                    <form method="post">
+                                    <form method="post" action="#">
 
                                         <div class="form-floating mb-3">
                                             <input class="form-control" name="uemail" type="email"
@@ -96,7 +105,7 @@
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="./usersignup.html">Need an account? Sign up!</a></div>
+                                    <div class="small"><a href="./usersignup.php">Need an account? Sign up!</a></div>
                                     <div class="small"><a href="./index.html">Back to Home</a></div>
                                 </div>
                             </div>
@@ -106,7 +115,7 @@
             </main>
         </div>
 
-        <!-- <?php include('includes/footer.php');?> -->
+        <?php //include('includes/footer.php');?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>

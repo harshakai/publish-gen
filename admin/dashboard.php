@@ -13,11 +13,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Admin Dashboard | Registration and Login System </title>
+
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="../css/styles.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
-        crossorigin="anonymous"></script>
+    
+    <title>Admin Dashboard | Registration and Login System </title>
+
+    <!-- Custom CSS Link -->
+    <link href="../css/admin.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -45,7 +50,7 @@
                                     </span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="manage-users.php">View Details</a>
+                                    <a class="small text-white stretched-link" href="./users/read.php">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -119,7 +124,7 @@
                                 <div class="card-body">Post a Job</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" style="text-align:center"
-                                        href="post_job.php">Post a Job</a>
+                                        href="./post_job/post_job.php">Post a Job</a>
                                 </div>
                             </div>
                         </div>

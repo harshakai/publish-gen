@@ -26,10 +26,9 @@ li {
 .about-page {
     width: 100%;
     height: fit-content;
-    position: relative;
-    top: 100px;
     /* border: 2px solid red; */
 }
+
 
 .about-page .container{
     display: flex;
@@ -80,11 +79,6 @@ li {
     background-position: center;
 }
 
-/******************************** FOOTER ***************************/
-.about-footer{
-    position: relative;
-    top: 100px;
-}
 
 
 /********************************************* EXTRA CODE ************************************/

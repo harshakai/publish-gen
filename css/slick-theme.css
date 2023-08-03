@@ -205,7 +205,7 @@
     color: #013378;
 }
 .slick-dots li button:before{
-    font-size: 0px;
+    font-size: 28px;
 }
 .slick-prev:before,
 .slick-next:before{

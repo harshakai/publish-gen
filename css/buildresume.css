@@ -34,7 +34,7 @@ h1 {
 
 .resume-preview .resumes{
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     /* border: 3px solid red; */
 }

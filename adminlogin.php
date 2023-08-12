@@ -1,55 +1,44 @@
-<!-- <?php
-        session_start();
+<?php
+    
+    session_start();
 
-// include_once('../includes/config.php');
-// Code for login 
-// if(isset($_POST['login']))
-// {
-//     $adminusername = $_POST['username'];
-//     $pass = ($_POST['password']);
-//     // echo $adminusername;
-//     // echo "<br>";
-//     // echo $pass;
-//     // $ret = mysqli_query($con,"SELECT * FROM `admin`");
-//     // while ($row = mysqli_fetch_assoc($ret)) {
-//     //     print_r($row);
-//     // }
-//     // $row = mysqli_fetch_assoc($ret)
-//     // print_r($row);
-//     $ret = mysqli_query($con,"SELECT * FROM `admin` WHERE username='$adminusername' and password='$pass'");
-//     $num = mysqli_fetch_assoc($ret);
-//     $count = mysqli_num_rows($ret);
-//     echo $count;
-//     if($count>0)
-//     {
-//         // $extra="./dashboard.php";
-        
+    include_once('./config.php');
 
-//         $_SESSION['id'] = $num['id'];
-//         $_SESSION['name'] = $num['username'];
-//         $_SESSION['user_role'] = $num['user_role'];
+    // Code for login 
+    if($_SERVER["REQUEST_METHOD"] ==  "POST")
+    {
+        $email = $_POST['email'];
+        $password = ($_POST['password']);
+
+        $sql = mysqli_query($db,"SELECT * FROM `admins` WHERE email='$email' and password='$password'");
+
+        $row = mysqli_fetch_assoc($sql);
+
+        $count = mysqli_num_rows($sql);
+
+        if($count>0)
+        {
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['role'] = $row['role'];
 
 
-//         // echo $_SESSION['id'];
-//         // echo $_SESSION['name'];
-//         // echo $_SESSION['user_role'];
+            // echo "<script>alert('Success');</script>";
+            header("Location: ./admin/dashboard.php");
 
-//         header("Location: ./dashboard.php");
+            exit();
+        }
+        else
+        {
+            // echo "<script>alert('Invalid username or password');</script>";
 
-//         // echo "<script>window.location.href = '".$extra."'</script>";
-//         exit();
-//     }
-//     else
-//     {
-//         echo "<script>alert('Invalid username or password');</script>";
-//         // $extra="index.php";
-//         // echo "<script>window.location.href = '".$extra."'</script>";
-        
-//         header("Location: ./index.php");
-//         exit();
-//     }
-// }
-?> -->
+            header("Location: ./adminlogin.php");
+            exit();
+        }
+    }
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +50,10 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Admin Login | Registration and Login System</title>
+    <title>GENESIS IT SOLUTIONS | Admin Login</title>
+
+    <!-- Webiste Icon -->
+    <link rel="shortcut icon" href="./images/tablogo.png" type="image/x-icon">
 
     <!-- Custom CSS Links -->
     <link rel="stylesheet" href="./css/adminlogin.css">
@@ -86,12 +78,12 @@
                                 </div>
                                 <div class="card-body">
 
-                                    <form method="post">
+                                    <form method="post" action="#">
 
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" name="username" type="text"
+                                            <input class="form-control" name="email" type="text"
                                                 placeholder="Username" required />
-                                            <label for="inputEmail">Username</label>
+                                            <label for="inputEmail">Email</label>
                                         </div>
 
 
@@ -104,14 +96,12 @@
 
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <a class="small" href="../password-recovery.php">Forgot Password?</a>
-                                            <button class="btn btn-primary" name="login" type="submit"><a
-                                                    href="./admin/dashboard.php"
-                                                    style="text-decoration: none; color: #fff;">Login</a></button>
+                                            <button class="btn btn-primary" name="login" type="submit">Login</button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="./index.html">Back to Home Page</a></div>
+                                    <div class="small"><a href="./index.php">Back to Home Page</a></div>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +109,7 @@
                 </div>
             </main>
         </div>
-        <!-- <?php include('../includes/footer.php');?> -->
+        <?php  // include('../includes/footer.php');?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>

@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,9 +17,6 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     
     <title>Admin Dashboard | Registration and Login System </title>
-
-    <!-- Webiste Icon -->
-    <link rel="shortcut icon" href="../images/tablogo.png" type="image/x-icon">
 
     <!-- Custom CSS Link -->
     <link href="../css/admin.css" rel="stylesheet" />
@@ -62,6 +59,61 @@
                             // $query1=mysqli_query($con,"select id from users where date(posting_date)=CURRENT_DATE()-1");
                             // $yesterdayregusers=mysqli_num_rows($query1);
                         ?>
+
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-warning text-white mb-4">
+                                <div class="card-body">Yesterday Registered Users
+                                    <span style="font-size:22px;">
+                                        <?php // echo $yesterdayregusers;?>
+                                    </span>
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="yesterday-reg-users.php">View
+                                        Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php
+                            // $query2=mysqli_query($con,"select id from users where date(posting_date)>=now() - INTERVAL 7 day");
+                            // $last7daysregusers=mysqli_num_rows($query2);
+                        ?>
+
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-success text-white mb-4">
+                                <div class="card-body"> Registered Users in Last 7 Days
+                                    <span style="font-size:22px;">
+                                        <?php //echo $last7daysregusers;?>
+                                    </span>
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="lastsevendays-reg-users.php">View
+                                        Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php
+                            // $query3=mysqli_query($con,"select id from users where date(posting_date)>=now() - INTERVAL 30 day");
+                            // $last30daysregusers=mysqli_num_rows($query3);
+                        ?>
+
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body">Registered Users in Last 30 Days
+                                    <span style="font-size:22px;">
+                                        <?php // echo $last30daysregusers;?>
+                                    </span>
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="lastthirtyays-reg-users.php">View
+                                        Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 

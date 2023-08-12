@@ -1,8 +1,6 @@
 <?php 
     session_start();
-    
-    include_once('../../config.php');
-    
+    // include_once('../includes/config.php');
     // if (($_SESSION['user_role']!='admin')) {
     //   header('location:logout.php');
     // } 
@@ -17,31 +15,7 @@
     //         echo "<script>alert('Data deleted');</script>";
     //         }
     //     }
-
-    if($_SERVER["REQUEST_METHOD"] ==  "POST")
-    {
-        $job_title = $_POST['job_title'];
-        $job_description = addslashes( $_POST['job_description']);
-        $job_location = $_POST['job_location'];
-        $contact_email = $_POST['contact_email'];
-    
-        $jobid = md5(substr($job_title,0,3).substr($contact_email,0,3).random_int(10000,99999));
-
-        $sql = mysqli_query($db,"INSERT INTO `jobs`(`title`, `description`, `location`, `email`, `jobid`)  VALUES ('$job_title','$job_description','$job_location','$contact_email','$jobid')");
-
-        if($sql){
-            echo "<script>alert('Job Successfully Posted');</script>";
-            // echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
-            header("Location: ../dashboard.php");
-        }
-        else{
-            echo "<script>alert('Something went wrong');</script>";
-        }
-
-    }
-
-?>
-
+   ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,22 +30,12 @@
 
     <title>GENESIS IT SOLUTIONS-Jobs</title>
 
-    <!-- Webiste Icon -->
-    <link rel="shortcut icon" href="../../images/tablogo.png" type="image/x-icon">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/admin.css">
     <link rel="stylesheet" href="../../css/post_job.css">
 
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-
-    <style>
-        li a{
-            text-decoration: none;
-            color: #000;
-        }
-    </style>
 
 </head>
 
@@ -91,7 +55,7 @@
                     <div class="job-posting-section">
                         <h2>Post a Job</h2>
                         <!-- <form action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF"]); ?>" method="POST"> -->
-                        <form action="#" method="post">
+                        <form action="">
                             <label for="job_title">Job Title:</label>
                             <input type="text" name="job_title" required>
 
@@ -101,7 +65,7 @@
                             <label for="job_location">Job Location:</label>
                             <input type="text" name="job_location" required>
 
-                            <label for="contact_email">Contact Email</label>
+                            <label for="contact_email">contact email</label>
                             <input type="email" name="contact_email" required>
 
                             <button type="submit">Add Job</button>

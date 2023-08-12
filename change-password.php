@@ -39,9 +39,6 @@
 
     <title>Change password | Registration and Login System</title>
 
-    <!-- Webiste Icon -->
-    <link rel="shortcut icon" href="./images/tablogo.png" type="image/x-icon">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/admin.css">
 

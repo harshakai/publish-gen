@@ -1,29 +1,49 @@
 <?php 
-// session_start();
-// include_once('../includes/config.php');
-// if (($_SESSION['user_role']=='admin')) {  
-//  // for  password change   
-// if(isset($_POST['update']))
-// {
-// $oldpassword=md5($_POST['currentpassword']); 
-// $newpassword=md5($_POST['newpassword']);
-// $sql=mysqli_query($con,"SELECT password FROM admin where password='$oldpassword'");
-// $num=mysqli_fetch_array($sql);
-// if($num>0)
-// {
-// $adminid=$_SESSION['adminid'];
-// $ret=mysqli_query($con,"update admin set password='$newpassword' where id='$adminid'");
-// echo "<script>alert('Password Changed Successfully !!');</script>";
-// echo "<script type='text/javascript'> document.location = 'change-password.php'; </script>";
-// }
-// else
-// {
-// echo "<script>alert('Old Password not match !!');</script>";
-// echo "<script type='text/javascript'> document.location = 'change-password.php'; </script>";
-// }
-// }
+    session_start();
 
+    if(isset($_SESSION['id'])){
+        $id = $_SESSION['id'];
+    }
+
+    include_once('../config.php');
     
+     // for  password change   
+    if(isset($_POST['update']))
+    {
+        $oldpassword = ($_POST['currentpassword']); 
+        $newpassword = ($_POST['newpassword']);
+
+        $details = mysqli_query($db,"SELECT * FROM `admins` WHERE id='$id'");
+
+        $password_details = mysqli_fetch_assoc($details);
+
+        $db_password = $password_details['password'];
+
+        if($db_password === $newpassword){
+            echo "<script>alert('Old Password and New Password should be different !!');</script>";
+        }
+        else{
+            $sql = mysqli_query($db,"UPDATE `admins` SET `password`='$newpassword' WHERE id='$id'");
+            echo "<script>alert('Password Changed Successfully !!');</script>";
+        }
+        
+
+
+        // $sql=mysqli_query($db,"SELECT password FROM admin where password='$oldpassword'");
+        
+        // $num=mysqli_fetch_array($sql);
+        // if($num>0)
+        // {
+        // $adminid=$_SESSION['adminid'];
+        // $ret=mysqli_query($con,"update admin set password='$newpassword' where id='$adminid'");
+        // echo "<script type='text/javascript'> document.location = 'change-password.php'; </script>";
+        // }
+        // else
+        // {
+        // echo "<script>alert('Old Password not match !!');</script>";
+        // echo "<script type='text/javascript'> document.location = 'change-password.php'; </script>";
+        // }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +58,9 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 
     <title>Change password | Registration and Login System</title>
+
+     <!-- Webiste Icon -->
+     <link rel="shortcut icon" href="../images/tablogo.png" type="image/x-icon">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/admin.css">

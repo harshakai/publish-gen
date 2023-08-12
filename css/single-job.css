@@ -25,6 +25,22 @@
     /* border: 2px solid blue; */
 }
 
+.job-description .location{
+    font-size: 21px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 45px;
+    font-weight: 700;
+}
+
+.job-description .email{
+    font-size: 21px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 45px;
+    font-weight: 700;
+}
+
 .job-description button{
     margin: 10px;
     margin-left: 50px;

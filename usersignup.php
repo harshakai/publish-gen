@@ -1,30 +1,44 @@
-<!-- <?php session_start();
-require_once('includes/config.php');
+<?php 
+    
+    session_start();
 
-//Code for Registration 
-if(isset($_POST['submit']))
-{
-    $fname=$_POST['fname'];
-    $lname=$_POST['lname'];
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    $contact=$_POST['contact'];
-    $sql=mysqli_query($con,"select id from users where email='$email'");
-    $row=mysqli_num_rows($sql);
-    if($row>0)
+    include_once('./config.php');
+
+
+    // //Code for Registration 
+    if($_SERVER["REQUEST_METHOD"] ==  "POST")
     {
-        echo "<script>alert('Email id already exist with another account. Please try with other email id');</script>";
-    } else{
-        $msg=mysqli_query($con,"insert into users(fname,lname,email,password,contactno) values ('$fname','$lname','$email','$password','$contact')");
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $contact = $_POST['contact'];
+        $password = $_POST['password'];
+        $cpassword = $_POST['confirmpassword'];
+    
+        $userid = md5(substr($fname,0,3).substr($contact,0,3).random_int(10000,99999));
+    
+        if($password != $cpassword){
+            echo "<script>alert('Password should Match');</script>";
+        }
+    
+        $sql = mysqli_query($db,"SELECT * FROM `users` WHERE email='$email'");
+    
+        $row = mysqli_num_rows($sql);
+    
+        if($row>0)
+        {
+            echo "<script>alert('Email id already exist with another account. Please try with other email id');</script>";
+        } else{
+            $msg = mysqli_query($db,"INSERT INTO `users`(`fname`, `lname`, `email`, `phone`, `password`, `userid`)  VALUES ('$fname','$lname','$email','$contact','$password','$userid')");
+        }
+        if($msg)
+        {
+            echo "<script>alert('Registered successfully');</script>";
+            // echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
+            header("Location: userlogin.php");
+        }
     }
-    if($msg)
-    {
-        echo "<script>alert('Registered successfully');</script>";
-        // echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
-        header("Location: jobs.php");
-    }
-}
-?> -->
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,10 +49,13 @@ if(isset($_POST['submit']))
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>User Signup | Registration and Login System</title>
-    
+    <title>GENESIS IT SOLUTIONS | User Signup</title>
+
+    <!-- Webiste Icon -->
+    <link rel="shortcut icon" href="./images/tablogo.png" type="image/x-icon">
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/usersignup.css"/>
+    <link rel="stylesheet" href="./css/usersignup.css" />
 
 </head>
 
@@ -56,7 +73,7 @@ if(isset($_POST['submit']))
                                     <h3 class="text-center font-weight-light my-4">Create Account</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form method="post" name="signup" onsubmit="return checkpass();">
+                                    <form method="post" action="#" name="signup" onsubmit="return checkpass();">
 
                                         <div class="row mb-3">
                                             <div class="col-md-6">
@@ -118,8 +135,10 @@ if(isset($_POST['submit']))
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="pattern">
+                                            All Fields are Mandatory
+                                            <br>
                                             Password should be in this format
                                             <ul style="list-style: none">
                                                 <li>Atleast a number</li>
@@ -135,8 +154,8 @@ if(isset($_POST['submit']))
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="./userlogin.html">Have an account? Go to login</a></div>
-                                    <div class="small"><a href="./index.html">Back to Home</a></div>
+                                    <div class="small"><a href="./userlogin.php">Have an account? Go to login</a></div>
+                                    <div class="small"><a href="./index.php">Back to Home</a></div>
                                 </div>
                             </div>
                         </div>
@@ -144,27 +163,19 @@ if(isset($_POST['submit']))
                 </div>
             </main>
         </div>
-        <!-- <?php include_once('includes/footer.php');?> -->
+        <?php //include_once('includes/footer.php');?>
     </div>
     
+    <!------------------------ Bootstrap JS -------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
 
 
+    <!------------------------ Font Awesome JS -------------------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
         crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-        function checkpass() {
-            if (document.signup.password.value != document.signup.confirmpassword.value) {
-                alert(' Password and Confirm Password field does not match');
-                document.signup.confirmpassword.focus();
-                return false;
-            }
-            return true;
-        }
-    </script>
-
+    <!------------------------ Custom JS -------------------->
     <script src="./js/scripts.js"></script>
 
 

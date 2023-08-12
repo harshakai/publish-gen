@@ -23,12 +23,17 @@ h1 {
     color: #ffff;
 }
 
-button {
+.btn {
     width: fit-content;
     height: 40px;
     border-radius: 5px;
     border-style: solid;
     background-color: rgb(43, 43, 235);
+    color: #fff;
+}
+
+.btn:hover{
+    border: 1px solid #000;
 }
 
 /* .paragraph {
@@ -57,6 +62,15 @@ button {
     display: flex;
     flex-direction: row;
 } */
+
+/*************************************** RESUME FORM **************************************/
+.resume-modal h1{
+    color: #000;
+}
+.resume-modal h4{
+    color: red;
+    font-weight: 800;
+}
 
 /*************************************** RESUME SECTION **************************************/
 .resume-section {
@@ -87,6 +101,8 @@ button {
 .resume-section .content-section .paragraph {
     font-size: 60px;
     color: black;
+    width: 100%;
+    /* border: 1px solid red; */
 }
 
 .resume-section .content-section .caption {
@@ -95,7 +111,7 @@ button {
 }
 
 .resume-section .content-section button {
-    width: 25%;
+    width: fit-content;
     height: 40px;
     border-radius: 20px;
     margin-left: 50px;
@@ -104,6 +120,37 @@ button {
 .resume-section .image-section .responsive {
     width: 85%;
     height: auto;
+}
+@media(max-width: 1050px){
+    .resume-section .content-section .paragraph{
+        font-size: 50px;
+    }
+}
+@media(max-width: 790px){
+    .resume-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media(max-width: 760px){
+    .resume-section .content-section .paragraph{
+        font-size: 30px;
+    }
+}
+@media(max-width: 440px){
+    .resume-section .content-section .paragraph{
+        font-size: 28px;
+    }
+    .resume-section .content-section button{
+        margin-left: 0px;
+    }
+}
+
+@media(max-width: 440px){
+    .resume-section .content-section .paragraph{
+        font-size: 20px;
+    }
 }
 
 /********************************* JOBS SECTION ***********************************/
@@ -139,11 +186,34 @@ button {
     text-align: center;
     font-size: 35px;
 }
+@media screen and (max-width: 540px) {
+    .job .heading h2{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .job .heading h2{
+        font-size: 20px;
+        height: 55px;
+    }
+}
+@media screen and (max-width: 380px) {
+    .job .heading h2{
+        font-size: 18px;
+        height: 50px;
+    }
+}
 
 /****************** DISPLAY JOBS *****************/
 .jobs .container {
     position: relative;
     width: 100%;
+}
+.jobs .container h4{
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-weight: 800;
 }
 
 .jobs .prev {
@@ -170,10 +240,7 @@ button {
     width: 20%;
     border-radius: 20px;
     border: 2px solid gray;
-    /* border-style: solid;
-      border-color: gray;
-      border-width: 2px; */
-    padding: 10px;
+    padding: 0px 10px;
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -183,12 +250,33 @@ button {
 
 .jobs .job-postings .job-item h3 {
     font-size: 30px;
-    margin: 2%
+    margin: 2%;
+    position: relative;
+    top: -30px;
+    /* border: 1px solid red; */
 }
 
 .jobs .job-postings .job-item p {
     font-size: 20px;
-    margin: 2%
+    margin: 2%;
+    /* border: 1px solid blue; */
+}
+
+.jobs .job-postings .job-item p.location{
+    position: relative;
+    top: 0px;
+}
+
+.jobs .job-postings .job-item p.email{
+    position: relative;
+    top: 0px;
+    font-size: 18px;
+    /* border: 1px solid red; */
+}
+
+.jobs .job-postings .job-item .button{
+    position: relative;
+    top: 25px;
 }
 
 .jobs .job-postings .job-item a{
@@ -210,12 +298,23 @@ button {
     width: 30%;
     color: #fff;
 }
-
+ 
 .jobs .job-postings .job-item button:hover{
     background-color: #022d69;
     color: #fff;
 }
 
+@media(max-width: 770px){
+    .jobs .job-postings .job-item p.email{
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 590px){
+    .jobs .job-postings .job-item p.email{
+        font-size: 18px;
+    }
+}
 
 /************************* BALANCE CODE *************************/
 
